@@ -1,0 +1,16 @@
+main_menu:
+
+  - text: "Strona główna"
+    url: "/"
+    menu_type: "simple"
+  - text: "O nas"
+    url: "/o-nas/"
+    menu_type: "simple"
+  - text: "Blog"
+    url: "/blog/"
+    menu_type: "simple"
+  - text: "Kontakt"
+    url: "/kontakt/"
+    menu_type: "simple"
+
+

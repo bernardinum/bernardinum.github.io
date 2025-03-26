@@ -1,0 +1,105 @@
+---
+layout: default
+title: "Kontakt"
+meta_description: |
+  Dane kontaktowe Wydawnictwa Bernardinum. 
+permalink: "/kontakt/"
+sub_title: ""
+header_image: ""
+
+contact_info:
+  enable: true
+  title: "Dane kontaktowe"
+  sub_title: ""
+  contact_data:
+    - icon: "/assets/images/icons/ui-gps.webp"
+      info: "ul. Bpa Dominika 11,<br> 83-130 Pelplin"
+
+    - icon: "/assets/images/icons/co-telephone.webp"
+      info: "+48 58 536 17 57"
+
+    - icon: "/assets/images/icons/co-email-5.webp"
+      info:
+      - "sekretariat@bernardinum.com.pl"
+contact_form:
+  enable: true
+  title: "Formularz kontaktowy"
+  sub_title: |
+    Masz pytania? <br> Skorzystaj z poniższego formularza aby przesłać nam swoją wiadomość.
+  action_email: "sekretariat@bernardinum.com.pl"
+  
+  lists:
+    - title: Nazwa
+      info_01: "Wydawnictwo Bernardinum Sp. z o.o."
+      icon: "icofont-building"
+    - title: Adres
+      info_01: "ul. Bpa Dominika 11, 83-130 Pelplin"
+      icon: "icofont-location-pin"
+
+    - title: E-mail
+      info_01: "sekretariat@bernardinum.com.pl"
+      icon: "icofont-mail-box"
+
+    - title: Phone
+      info_01: "+48 58 536 17 57"
+      icon: "icofont-telephone"
+  
+  list_extra_phone:
+    - title: Pielgrzym
+      info_01: "+48 58 536 18 99"
+    - title: Redakcja Techniczna
+      info_01: "+48 58 536 48 96"
+    - title: Kierownik Drukarni
+      info_01: "+48 58 536 43 75"
+    - title: BOK Drukarnia
+      info_01: "+48 58 536 43 76"
+    - title: Dział Sprzedaży Książek i Prenumeraty czasopism
+      info_01: "+48 58 536 18 99"
+
+  list_extra_email:
+    - title: BOK
+      info_01: "biuroobslugi@bernardinum.com.pl"
+    - title: Pielgrzym
+      info_01: "pielgrzym@bernardinum.com.pl"
+    - title: Pastores
+      info_01: "pastores@bernardinum.com.pl"
+    - title: Drukarnia
+      info_01: "drukarnia@bernardinum.com.pl"
+    - title: Inspektor Ochrony Danych Osobowych
+      info_01: "iod@bernardinum.com.pl"
+
+  forms_data: 
+
+    - field_type: "input"
+      field_name: "first_name"
+      placeholder: "Imię" 
+      error_message: "Musisz wypełnić to pole." 
+
+    - field_type: "input"
+      field_name: "last_name"
+      placeholder: "Nazwisko" 
+      error_message: "Musisz wypełnić to pole."
+
+    - field_type: "input"
+      field_name: "user_email"
+      placeholder: "Email"
+      error_message: "Musisz wypełnić to pole."
+
+    - field_type: "input"
+      field_name: "user_phone"
+      placeholder: "Telefon"
+      error_message: "Musisz wypełnić to pole."
+
+    - field_type: "textarea"
+      field_name: "user_message"
+      placeholder: "Wiadomość"
+      error_message: "Musisz wypełnić to pole."
+
+google_maps:
+    enable: true
+---
+
+{% include layouts/nav/nav-11.html default_logo="black" drop_search=true alignment_class="ms-auto" %} 
+{% include layouts/header/page-title4.html %} 
+{% include components/contact/contact-4.html %}
+{% include layouts/footer/footer-3.html %}

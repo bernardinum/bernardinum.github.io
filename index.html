@@ -1,0 +1,423 @@
+---
+layout: default
+title: Wydawnictwo Bernardinum
+meta_title: Wydawnictwo Bernardinum
+meta_description: |
+  Szeroki wybór książek religijnych, historycznych i podróżniczych. Dewocjonalia, audiobooki, wydania reprintowe. Sprawdź ofertę! 
+custom_color: purple
+custom_font: font2
+
+hero_area:
+  enable: true
+  title: "Wydawnictwo Bernardinum"
+  sub_title: "Wierność tradycji łączymy z otwartością na nowoczesne formy przekazu."
+  slider_image:
+  shape_image: "/assets/images/dummy.webp"
+  button_text: "Poznaj nas"
+  button_url: "#about"
+
+services_area:
+  enable: true
+  title: "Tradycja"
+  sub_title: "Uważamy się za spadkobierców Gutenberga."
+  services:
+
+    - title: "Publikacje książkowe"
+      image: "/assets/images/art/bernardinum-ksiegarnia-ksiazki.webp"
+      description: |
+        Wydajemy ksiązki religijno-liturgiczne, historyczne, podróżnicze, literaturę dla dzieci i młodzieży oraz opracowania naukowe. 
+      button_text: 
+      button_url: "#"
+
+    - title: "Czasopismo Pielgrzym"
+      image: "/assets/images/art/pismo-pielgrzym-collage.webp"
+      description: |
+        Publikujemy dwutygodnik katolicki „Pielgrzym”, jedno z najstarszych czasopism katolickich w Polsce, ukazujące się od 1869 roku.
+      button_text: 
+      button_url: "#"
+
+    - title: "Biblia Gutenberga"
+      image: "/assets/images/art/bernardinum-faksymile-biblia-gutenberga.webp"
+      description: |
+        Drukujemy faksymile pelplińskiego egzemplarza piętnastowiecznej Biblii Gutenberga, najważniejszego dzieła piśmienniczego Europy. 
+      button_text: 
+      button_url: "#"
+
+process_area:
+  enable: true
+  title: "Pismo Pielgrzym"
+  sub_title: "Pielgrzym to przestrzeń refleksji, kultury i duchowości."
+  image: "/assets/images/art/pismo-pielgrzym-mockup.webp"
+  lists:
+
+    - title: "Misja"
+      description: "Wzmacniamy tożsamość kulturowo-relijną."
+
+    - title: "Relacje"
+      description: "Budujemy relacje z czytelnikami i diecezją."
+
+    - title: "Wartości"
+      description: "Pielęgnujemy dziedzictwo ważne dla Kościoła i kultury polskiej."
+
+testimonials:
+  enable: true
+  image: "/assets/images/art/ks-wojtek-weckowski.webp"
+  feedback:
+
+    - quote: |
+        Działalność Wydawnictwa Bernardinum od początku jego istnienia kieruje się misją promowania wartości chrześcijańskich, kulturowych i edukacyjnych. Współpracujemy zarówno z uznanymi, jak i nowymi autorami, których książki poruszają szeroki wachlarz tematów – od podróży i historii, po religię i literaturę piękną.
+      name: "ks. dr Wojciech Węckowski"
+      designation: "Redaktor Naczelny"
+
+video_area:
+  enable: true
+  title: "Drukarnia Bernardinum"
+  sub_title: "Dysponujemy własną nowoczesną drukarnią."
+  video_url: "https://www.youtube.com/watch?v=0UaOIEugG8o"
+  image: "/assets/images/art/bernardinum-drukarnia-home-section.webp"
+  lists:
+
+    - title: "Pełna kontrola nad produkcją"
+      description: "całego procesu produkcyjnego – od składu, przez druk, po oprawę."
+
+    - title: "Krótszy czas realizacji"
+      description: "premier, książek okolicznościowych, dodruków bestsellerów."
+
+    - title: "Niskonakładowe publikacje"
+      description: "to realizacja książek misyjnych, specjalistycznych lub lokalnych."
+
+    - title: "Spójność marki i produktu"
+      description: "to dbałość o charakter publikacji zgodny z misją Bernardinum."
+
+
+teams_carousel:
+  enable: true
+  type: box
+  title: NASI AUTORZY
+  sub_title: |
+    Współpracujemy z wieloma wybitnymi autorami, <br class="d-none d-lg-block"> których twórczość wzbogaca ofertę wydawniczą. 
+
+subscribe_area:
+  enable: true
+  title: "Podaj swój e-mail, a my wyślemy Ci kupon rabatowy z 20% zniżką na nasze książki!"
+  img_1x: "/assets/images/art/bernardunum-kupon-rabat-20@2x.png"
+  img_2x: "/assets/images/art/bernardunum-kupon-rabat-20@2x.png"
+  action_url: "https://submit-form.com/Pab72KVv4"
+  data-botpoison-public-key: "pk_d58c5d48-cf52-4d06-bcaf-728e4ec143ec"
+
+---
+
+{% include layouts/nav/nav-11.html default_logo="black" drop_search=true %}
+{% if page.hero_area.enable %}
+<div class="wrapper white-wrapper">
+  <div class="rev_slider_wrapper fullscreen-container">
+    <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
+      <ul>
+        <li data-transition="fade" data-thumb="{{page.hero_area.title}}">
+          {% if page.hero_area.shape_image %}
+           <img src="{{page.hero_area.shape_image}}" data-bgcolor="#fff" alt="{{page.hero_area.title}}"/>
+          {% endif %}
+          <div class="tp-caption tp-rotate bg-opacity-default tp-shape tp-shapewrapper" 
+               data-x="['center','center','center','center']" 
+               data-y="['middle','middle','middle','middle']" 
+               data-hoffset="['0','0','0','0']" 
+               data-voffset="['0','0','0','0']"
+	           data-visibility="['on','on','on','off']"
+               data-width="3000" 
+               data-height="900" 
+               data-whitespace="nowrap" 
+               data-type="shape" 
+               data-basealign="slide" 
+               data-responsive_offset="off" 
+               data-responsive="off" 
+               data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
+          </div>
+		  <!-- /.tp-caption -->
+		  {% if page.hero_area.slider_image %}
+          <div class="tp-caption" 
+               data-x="left" 
+               data-y="middle" 
+               data-hoffset="['420','380','310','310']" 
+               data-voffset="'20','20','-10','-10']" 
+               data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+               data-visibility="['on','on','on','off']" 
+               data-width="none" 
+               data-height="none" 
+               data-type="image" 
+               data-responsive_offset="on" style="z-index: 5;"><img 
+               data-lazyload="" src="{{page.hero_area.slider_image}}" 
+               data-ww="['750','550','550','550']" 
+               data-hh="auto" alt="{{page.hero_area.title}}" />
+          </div>
+		  <!-- /.tp-caption -->
+		  {% endif %}
+		  {% if page.hero_area.title %}
+          <div class="tp-caption font-weight-600 color-dark" 
+               data-x="['left','left','left','left']" 
+               data-y="middle" 
+               data-hoffset="['50','50','30','30']" 
+               data-voffset="['-80','-80','-80','-50']" 
+               data-fontsize="['40','40','38','38']" 
+               data-lineheight="['50','50','48','48']" 
+               data-width="['350','350','330','330']" 
+               data-textAlign="['left','left','left','left']" 
+               data-whitespace="['normal','normal','normal','normal']" 
+               data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+               data-responsive="on" 
+               data-responsive_offset="on" style="z-index: 9;"> {{page.hero_area.title}}
+          </div>
+          {% endif %}
+		  <!-- /.tp-caption -->
+		  {% if page.hero_area.sub_title %}
+          <div class="tp-caption font-weight-400 color-dark" 
+               data-x="['left','left','left','left']" 
+               data-y="middle" 
+               data-hoffset="['50','50','30','30']"  
+               data-voffset="['30','30','30','60']" 
+               data-fontsize="['26','26','24','24']" 
+               data-lineheight="['36','36','34','34']" 
+               data-width="['360','360','330','330']" 
+               data-textAlign="['left','left','left','left']" 
+               data-whitespace="['normal','normal','normal','normal']" 
+               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+               data-responsive="on" 
+               data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.sub_title}}
+          </div>
+		  <!-- /.tp-caption -->
+		  {% endif %}
+		  {% if page.hero_area.button_text %}
+          <a class="tp-caption btn btn-l btn-default scroll" 
+               data-x="['left','left','left','left']" 
+               data-y="middle" 
+               data-hoffset="['50','50','30','30']" 
+               data-voffset="['125','125','125','155']" 
+               data-width="['auto','auto','auto','auto']" 
+               data-textAlign="['left','left','left','left']" 
+               data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+               data-responsive="on" 
+               data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.button_url}}"> {{page.hero_area.button_text}}
+          </a>
+		  <!-- /.tp-caption -->
+		  {% endif %}
+        </li>
+      </ul>
+      <div class="tp-bannertimer tp-bottom"></div>
+    </div>
+    <!-- /.rev_slider -->
+  </div>
+  <!-- /.rev_slider_wrapper -->
+</div>
+<!-- /.wrapper -->
+{% endif %}
+
+{% if page.services_area.enable %}
+<div id="about" class="wrapper white-wrapper">
+  <div class="container inner">
+  	{% if page.services_area.enable %}
+    <div class="row">
+    	<div class="col-md-7 mx-auto">
+		    <h2 class="title-color color-gray text-center">{{page.services_area.title}}</h2>
+		    <h3 class="display-3 text-center">{{page.services_area.sub_title}}</h3>
+		    <div class="space40"></div>
+    	</div>
+    </div>	
+    {% endif %}
+    {% if page.services_area.enable %}
+    <div class="row gutter-60 text-center align-items-end">
+      {% for service in  page.services_area.services  %}
+      <div class="col-md-4">
+      	{% if service.image %}
+        <div class="img-blob blob1 mb-30">
+        	<img src="{{service.image}}" style="width: 30rem; filter: saturate(40%)" alt="{{service.title}}"/>
+        </div>
+        {% endif %}
+        <h4>{{service.title}}</h4>
+        <p class="lead mb-15">{{service.description}}</p>
+        {% if service.button_text %}
+         <div class="text-center"><a href="{{service.button_url}}" class="more">{{service.button_text}}</a></div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <!--/.row -->
+    {% endif %}
+    {% if page.process_area.enable %}
+    <div class="row">
+    	<div class="col-md-7 mx-auto">
+		    <div class="space160"></div>
+		    <h2 class="title-color color-gray text-center">{{page.process_area.title}}</h2>
+		    <h3 class="display-3 text-center">{{page.process_area.sub_title}}</h3>
+		    <div class="space40"></div>
+    	</div>
+    </div>
+    <div class="row align-items-center">
+      {% if page.process_area.image %}
+      <div class="col-lg-8">
+        <figure>
+          <img src="{{page.process_area.image}}" alt="{{page.process_area.title}}"/>
+        </figure>
+      </div>
+      {% endif %}
+      <div class="space20 d-md-none"></div>
+      <div class="space50 d-none d-md-block d-lg-none"></div>
+      <div class="col-lg-4 pl-50 pr-lg-0 pl-md-0">
+      	{% for list in page.process_area.lists %}
+        <div class="d-flex flex-row justify-content-center">
+          <div>
+            <span class="icon icon-bg icon-bg-default color-default mr-25">
+            	<span class="number">{{forloop.index}}</span>
+            </span>
+          </div>
+          <div>
+            <h5>{{list.title}}</h5>
+            <p class="mb-0">
+            	{{list.description}}
+            </p>
+          </div>
+        </div>
+        <div class="space40"></div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- /.wrapper -->
+{% endif %}
+
+{% if page.testimonials.enable %}
+<div class="wrapper light-wrapper">
+  <div class="container inner pb-0">
+    <div class="row align-items-center">
+      {% if page.testimonials.image %}
+      <div class="col-md-5 col-lg-4 offset-lg-1 d-none d-md-flex">
+        <figure><img src="{{page.testimonials.image}}" alt="{{page.testimonials.image}}"></figure>
+      </div>
+      {% endif %}
+      <div class="col-md-7 col-lg-6 pl-60 pl-md-15">
+        <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
+          {% for quote in page.testimonials.feedback %}
+          <div class="item">
+            <blockquote class="icon icon-left larger text-left">
+              <p>"{{quote.quote}}"</p>
+              <div class="blockquote-details">
+                <div class="info p-0">
+                  <h6 class="mb-0">{{quote.name}}</h6>
+                  <span class="meta mb-0">{{quote.designation}}</span>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+          <!-- /.item -->
+          {% endfor %}
+        </div>
+        <!-- /.owl-carousel -->
+        <div class="space20 d-lg-none"></div>
+        <div class="space60 d-md-none"></div>
+      </div>
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+{% endif %}
+
+{% if page.portfolios_area.enable %}
+<div class="wrapper white-wrapper" id="portfolio">
+  <div class="container inner">
+    <div class="row">
+    	<div class="col-md-7 mx-auto">
+		    <h2 class="title-color color-gray text-center">{{page.portfolios_area.title}}</h2>
+		    <h3 class="display-3 text-center">{{page.portfolios_area.sub_title}}</h3>
+		    <div class="space40"></div>
+    	</div>
+    </div>
+    <div class="grid grid-view">
+      <div class="tiles text-center light-gallery-wrapper">
+        <div class="row isotope">
+          {% for project in page.portfolios_area.projects %}
+          <div class="item item-detailed grid-sizer col-md-6 col-lg-4">
+          	{% if project.image %}
+            <figure class="overlay overlay2 rounded mb-20">
+            	<a href="{{project.image}}" class="lightbox"> 
+            		<img src="{{project.image}}" alt="{{project.title}}"/>
+            	</a>
+            </figure>
+            {% endif %}
+            <div class="post-content">
+              <h2 class="post-title mb-10"><a href="{{project.url}}">{{project.title}}</a></h2>
+              <div class="meta mb-0">{{project.sub_title}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- /.grid -->
+    {% if page.portfolios_area.button_text %}
+    <div class="space20"></div>
+    <div class="text-center">
+      <a href="{{page.portfolios_area.button_url}}" class="btn btn-l btn-default mb-0">{{page.portfolios_area.button_text}}</a>
+    </div>
+    {% endif %}
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+{% endif %}
+
+<div class="wrapper white-wrapper">
+  <div class="container inner">
+    {% if page.video_area.enable %}
+    <div class="row align-items-center">
+     {% if page.video_area.image %}
+      <div class="col-lg-6 order-lg-2 play-wrapper light-gallery-wrapper text-center">
+        <div class="img-blob blob4">
+        	<img src="{{page.video_area.image}}" style="width: 30rem" alt="{{page.video_area.title}}"/>
+        </div>
+        <a href="{{page.video_area.video_url}}" class="btn-play lightbox"></a>
+      </div>
+      {% endif %}
+      <div class="space20 d-md-none"></div>
+      <div class="space50 d-none d-md-block d-lg-none"></div>
+      <div class="col-lg-6 pr-50 pr-md-15">
+      	{% if page.video_area.title %}
+         <h2 class="title-color color-gray text-center text-lg-start">{{page.video_area.title}}</h2>
+        {% endif %}
+        {% if page.video_area.sub_title %}
+         <h3 class="display-3 text-center text-lg-start">{{page.video_area.sub_title}}</h3>
+        {% endif %}
+        <div class="space30"></div>
+        <div class="row">
+          {% for list in page.video_area.lists %}
+          <div class="col-md-6">
+            <div class="d-flex flex-row">
+              <div>
+                <span class="icon icon-bg icon-bg-default color-default mr-25"><span class="number">{{forloop.index}}</span></span>
+              </div>
+              <div>
+                <p class="lead">{{list.title}}</p>
+                <p>{{list.description}}</p>
+              </div>
+            </div>
+          </div>
+          <!--/column -->
+          {% endfor %}
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/column -->
+    </div>
+    <!--/.row -->
+    {% endif %}
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+{% if page.teams_carousel.enable %}
+{% include components/team/team-members.html %}
+{% endif %}
+{% include utilities/newsletter-discount.html %}
+{% include layouts/footer/footer-3.html %}

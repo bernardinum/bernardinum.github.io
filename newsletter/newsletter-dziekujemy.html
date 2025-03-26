@@ -1,0 +1,46 @@
+---
+layout: default
+title: "Dziękujemy za przesłanie formularza!"
+permalink: "/twoj-kupon-rabatowy/"
+sub_title: "Na podany e-mail wysłaliśmy wiadomość z kuponem rabatowym."
+header_image: ""
+
+newsletter_info:
+  enable: true
+  title: "Dziękujemy za przesłanie formularza!"
+  description: |
+    <h2>Dziękujemy za Twojego e-maila!</h2>
+    <p class="lead larger">Na podany e-mail wysłaliśmy wiadomość z <span class="badge rounded-pill text-bg-warning">kuponem rabatowym</span>. Sprawdź swoją pocztę. Jeśli w ciągu kilku minut nie będzie wiadomości - <b>sprawdź folder SPAM</b>.</p>
+    <h3>Gdzie można wykorzystać kupon rabatowy?</h3>
+    <p class="lead larger"><span class="badge rounded-pill text-bg-warning">Kupon rabatowy </span>można wykorzystać w księgarni internetowej Wydawnictwa Bernardinum. Podczas składania zamówienia wpisz ten kod w odpowiednie pole w formularzu. </p>
+    <ul class="icon-list bullet-brown">
+    <li class="lead larger"><i class="jam jam-arrow-right"></i><a a target="_blank" href="https://ksiegarnia.bernardinum.com.pl/?utm_source=Newsletter_from_Form&utm_medium=www&utm_campaign=Coupon_20%_Monitoring" class="button">idź do ksiegarnia.bernardinum.com.pl</a></li>
+    <li class="lead larger"><i class="jam jam-arrow-right"></i><a href="/" class="button">wróć do strony głównej</a></li>
+    </ul>
+
+---
+
+{% include layouts/nav/nav-11.html default_logo="black" drop_search=true alignment_class="ms-auto" %} 
+{% include layouts/header/page-title4.html %} 
+
+<div class="wrapper light-wrapper">
+    <div class="container inner">
+      {% if page.newsletter_info.enable %}
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            {% if page.privacy_info.title %}
+             <h2 class="section-title larger mb-20">{{ page.newsletter_info.title }}</h2>
+            {% endif %}
+            {% if  page.newsletter_info.description %}
+             <p class="lead">{{page.newsletter_info.description}}</p>
+            {% endif %}
+            <div class="space20"></div>
+
+          </div>
+        </div>
+
+        {% endif %}
+    </div>
+  </div>
+
+{% include layouts/footer/footer-3.html %}

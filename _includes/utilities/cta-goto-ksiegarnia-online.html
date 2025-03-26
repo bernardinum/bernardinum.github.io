@@ -1,0 +1,15 @@
+<div class="wrapper image-wrapper bg-auto no-overlay bg-image text-center" data-image-src="{{page.contact_area.bg_image}}">
+    <div class="container inner">
+        <div class="row">
+            <div class="col-md-9 mx-auto">
+                {% if page.contact_area.sub_title %}
+                 <h3 class="display-3">{{page.contact_area.sub_title}}</h3>
+                {% endif %}
+                <div class="space30"></div>
+                {% if page.contact_area.button_text %}
+                <a href="{{page.contact_area.button_url}}" class="btn btn-l btn-default mb-0">{{page.contact_area.button_text}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

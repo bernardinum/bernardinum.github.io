@@ -1,0 +1,125 @@
+# General Settings
+title: "Wydawnictwo Bernardinum"
+email: "sekretariat@bernardinum.com.pl"
+email_2: ""
+description: >- # this means to ignore newlines until "baseurl:"
+  Odkryj książki Wydawnictwa Bernardinum – literatura, reportaże, biografie i albumy. Pasja do słowa i wartościowe treści w jednym miejscu!
+favicon: "/assets/images/favicon.webp"
+
+# Seo Meta Settings
+meta_og_image: "/assets/images/meta-og-image.webp"
+meta_twitter_image: "/assets/images/meta-og-image.webp"
+
+# Site Wide Theme Color Setting
+color_scheme:  #Aqua Blue Brown Cobalt Green Hibiscus Leaf Meander Orange Pink Purple Red Rose Sky Teal Violet Yellow
+
+# Site Wide Theme Font Setting
+font_scheme:  OpenSans # Jost, Nunito #, DM Sans + Zilla Slab , HK Grotesk, Abhaya, Libre
+
+# Sitewide Logo
+black_logo_1x: "/assets/images/logo.webp"
+black_logo_2x: "/assets/images/logo@2x.webp"
+light_logo_1x: "/assets/images/logo-light.webp"
+light_logo_2x: "/assets/images/logo-light@2x.webp"
+
+# Site Wide Address and Phone Number
+address_01: 'ul. Bpa Dominika 11 <br>83-130 Pelplin'
+phone_number: "+48 58 536 17 57"
+
+# Site Wide Copyright
+copyright_text: "© 2025 Wydawnictwo Bernardinum. All rights reserved."
+
+# Site Wide Google Analytics
+google_analytics:
+  enable: false
+  key: "UA-664136761-1"  # UA-664136761-1
+
+# Site Wide Google Map  
+google_map: |
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.3854091855965!2d18.6903698!3d53.9248964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470298c521f43f5f%3A0xd2e581d1131f6cbd!2sWydawnictwo%20Bernardinum!5e0!3m2!1spl!2spl!4v1741852347586!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+# Site Wide Social Accounts
+social_accounts:
+  title: "Social Media"
+  links:
+    - url: "https://www.facebook.com/profile.php?id=100041691229106"
+      icon: "jam jam-facebook"
+
+    - url: "https://www.instagram.com/wydawnictwo_bernardinum/"
+      icon: "jam jam-instagram"
+
+    - url: "https://maps.app.goo.gl/XhLbXsrHyLqvfVABA"
+      icon: "jam jam-google"
+      
+    - url: "https://www.youtube.com/@pielgrzymtv6107"
+      icon: "jam jam-youtube"
+
+# Site Wide External Links for footer
+external_links:
+  title: "Odnośniki"
+  links:
+    - url: "https://ksiegarnia.bernardinum.com.pl/"
+      text: "Księgarnia internetowa"
+    - url: "https://pielgrzym.pelplin.pl/"
+      text: "Pismo Pielgrzym"
+    - url: "https://www.drukarnia.bernardinum.com.pl/"
+      text: "Drukarnia Bernardinum"
+    - url: "/kontakt/"
+      text: "Kontakt"
+    - url: "/polityka-prywatnosci/"
+      text: "Polityka prywatności"
+
+# Site Wide External Links for footer
+external_links_02:
+  title: "Need Help?"
+  links:
+    - url: "#"
+      text: "Support"
+    - url: "#"
+      text: "Get Started"
+    - url: "#"
+      text: "Contact Us"
+    - url: "#"
+      text: "Terms of Use"
+    - url: "#"
+      text: "Privacy Policy"
+
+# Site Wide External Links for footer
+external_links_03:
+  title: "Company"
+  links:
+    - url: "#"
+      text: "Our Team"
+    - url: "#"
+      text: "Strategy"
+    - url: "#"
+      text: "Service"
+    - url: "#"
+      text: "Mission"
+    - url: "#"
+      text: "Process"
+
+# Footer Newsletter
+footer_newsletter:
+  title: "Newsletter"
+  sub_title: "Subscribe to our newsletter to get our news & deals delivered to your inbox!"
+  subscribe_button_text: "Wyslij"
+
+# Author Page Background Image
+author_page_header:
+  header_background_image: "/assets/images/art/bg31.webp"
+
+# Gallery
+gallery:
+  images:
+  - img: "/assets/images/art/z1.svg"
+  - img: "/assets/images/art/z2.svg"
+  - img: "/assets/images/art/z3.svg"
+  - img: "/assets/images/art/z4.svg"
+  - img: "/assets/images/art/z5.svg"
+  - img: "/assets/images/art/z6.svg"
+  - img: "/assets/images/art/z7.svg"
+  - img: "/assets/images/art/z8.svg"
+
+ui_strings:
+  contact_info: Kontakt
