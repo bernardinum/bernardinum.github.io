@@ -3,14 +3,12 @@
   class="navbar absolute transparent navbar-hover-opacity nav-uppercase navbar-expand-lg">
   <div class="container ">
     <div class="navbar-brand" data-default-logo="{{ include.default_logo | default: 'white' }}">
-      <!-- White Logo -->
       <a href="{{site.url}}"><img 
         src="{{site.data.general_settings.light_logo_1x}}" 
         srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
         class="logo-light {% if include.default_logo == 'black' %}d-none{% endif %}" 
         alt="{{site.data.general_settings.title}}" /></a>
   
-      <!-- Black Logo -->
       <a href="{{site.url}}"><img 
         src="{{site.data.general_settings.black_logo_1x}}" 
         srcset="{{site.data.general_settings.black_logo_1x}} 1x, {{site.data.general_settings.black_logo_2x}} 2x"
@@ -19,22 +17,17 @@
     </div>
     <div class="navbar-other ms-auto order-lg-3">
       <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
-        <li class="nav-item">
-          <div class="navbar-hamburger d-lg-none d-xl-none ms-auto">
-            <button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button>
-          </div>
-        </li>
+        {% include layouts/nav/_hamburger.html %}
+
         {% if include.btn_header %}
-      {% include layouts/nav/_btn-header.html %}
-      {% endif %}
-      
-      {% if include.drop_search %}
-      {% include layouts/nav/_drop-search.html %}
-      {% endif %}
+        {% include layouts/nav/_btn-header.html %}
+        {% endif %}
+        
+        {% if include.drop_search %}
+        {% include layouts/nav/_drop-search.html %}
+        {% endif %}
       </ul>
-      <!-- /.navbar-nav -->
     </div>
-    <!-- /.navbar-other -->
     <div class="navbar-collapse offcanvas-nav">
       <div class="offcanvas-header d-lg-none d-xl-none">
         <a href="{{site.url}}">
@@ -64,14 +57,10 @@
                     <li><a class="dropdown-item" href="{{column.url}}">{{column.text}}</a></li>
                   </ul>
                 </div>
-                <!--/column -->
                 {% endfor %}
               </div>
-              <!--/.row -->
             </li>
-            <!--/.mega-menu-content-->
           </ul>
-          <!--/.dropdown-menu -->
         </li>
         {% when "dropdown" %}
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{menu.url}}">{{menu.text}}</a>
@@ -116,11 +105,7 @@
         {% endcase %}
         {% endfor %}
       </ul>
-      <!-- /.navbar-nav -->
     </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
 </nav>
-<!-- /.navbar -->
 {% include layouts/nav/_offcanvas-info.html %}
