@@ -11,7 +11,7 @@ hero_area:
   enable: true
   title: "Wydawnictwo Bernardinum"
   sub_title: "Wierność tradycji łączymy z otwartością na nowoczesne formy przekazu."
-  slider_image:
+  slider_image: /assets/images/art/bernardinum-home-hero-image.webp"
   shape_image: "/assets/images/dummy.webp"
   button_text: "Poznaj nas"
   button_url: "#about"
@@ -227,7 +227,7 @@ subscribe_area:
       {% for service in  page.services_area.services  %}
       <div class="col-md-4">
       	{% if service.image %}
-        <div class="img-blob blob1 mb-30">
+        <div class="img-blob blob12 mb-30">
         	<img src="{{service.image}}" style="width: 30rem; filter: saturate(40%)" alt="{{service.title}}"/>
         </div>
         {% endif %}
@@ -415,6 +415,8 @@ subscribe_area:
   <!-- /.container -->
 </div>
 <!-- /.wrapper -->
+
+{% include components/shop/products-new-carousel.html %}
 
 {% if page.teams_carousel.enable %}
 {% include components/team/team-members.html %}
