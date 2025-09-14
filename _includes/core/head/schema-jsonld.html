@@ -1,0 +1,88 @@
+{% if page.schema_type == "homepage" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ page.title | escape }}",
+  "url": "{{ site.url }}",
+}
+</script>
+{% elsif page.schema_type == "contact" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Kontakt",
+  "url": "{{ site.url }}{{ page.url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ page.title | escape }}",
+    "url": "{{ site.url }}"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+48-58-536-17-57",
+    "contactType": "customer service",
+    "areaServed": "PL",
+    "availableLanguage": "Polish"
+  }
+}
+</script>
+{% elsif page.schema_type == "about" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "O nas",
+  "url": "{{ site.url }}{{ page.url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ page.title | escape }}",
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/assets/images/logo.webp"
+    },
+    "sameAs": [
+      "https://www.facebook.com/WydawnictwoBernardinum",
+      "https://www.instagram.com/bernardinum_pelplin"
+    ]
+  }
+}
+</script>
+{% elsif page.schema_type == "privacy" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PrivacyPolicy",
+  "name": "Polityka prywatności",
+  "url": "{{ site.url }}{{ page.url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ page.title | escape }}",
+    "url": "{{ site.url }}"
+  },
+  "datePublished": "2025-01-01",
+  "inLanguage": "pl"
+}
+</script>
+{% elsif page.schema_type == "blog" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog {{ page.title | escape }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "description": "Aktualności, premiery wydawnicze i inspiracje literackie.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ page.title | escape }}",
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/assets/images/logo.webp"
+    }
+  }
+}
+</script>
+{% endif %}
