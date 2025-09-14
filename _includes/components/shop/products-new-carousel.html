@@ -1,68 +1,45 @@
+{% assign available_books = site.data.books | where: "availability", "in stock" | reverse | slice: 0, 6 %}
 <div class="wrapper gray-wrapper">
   <div class="container inner">
     <h2 class="section-title text-center">Nowości wydawnicze</h2>
     <div class="grid grid-view boxed">
       <div class="carousel owl-carousel gap-small" data-margin="0" data-dots="true" data-autoplay="true" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "3"}}'>
-
+        {% if site.data.books and site.data.books.size > 0 %}
+        {% for produkt in available_books %}
         <div class="item item-detailed">
           <div class="item-inner">
             <div class="box bg-white shadow p-30">
               <figure class="main rounded mb-30">
-                <div class="item-detailed-image"><img src="{{relative_url}}/assets/images/shop/Dziewczyna_M.-Fiedler_okladka_300.webp" alt="" /><img src="{{relative_url}}/assets/images/shop/Dziewczyna_M.-Fiedler_okladka_300.webp" alt="" /></div>
-                <span class="item-label bg-meander">Nowość!</span>
+                <div class="item-detailed-image">
+                  <img src="{{ produkt.image_link | escape }}" alt="{{ produkt.title | escape }}" />
+                </div>
+                <span class="item-label bg-green">Nowość</span>
               </figure>
               <div class="item-content">
-                <h2 class="post-title mb-10"><a target="_blank" href="https://ksiegarnia.bernardinum.com.pl/pl/p/Dziewczyna%2C-ktora-pomogla-Ameryce-osiagnac-wielkosc/2384">Dziewczyna, która pomogła Ameryce osiągnąć wielkość</a></h2>
-                <div class="price mb-0"><span class="amount">39.90 zł</span> </div>
+                {% assign words = produkt.title | escape | split: ' ' %}
+                {% assign short_title = '' %}
+                {% for word in words %}
+                  {% assign test = short_title | append: word | append: ' ' %}
+                  {% if test.size < 20 %}
+                    {% assign short_title = test %}
+                  {% else %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                <h2 class="post-title mb-10">
+                  <a target="_blank" href="{{ produkt.link | escape }}">
+                    {{ short_title | strip }}{% if produkt.title.size > short_title.size %}…{% endif %}
+                  </a>
+                </h2>
+                <div class="price mb-0"><span class="amount">{{ produkt.price | escape }} zł</span> </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="item item-detailed">
-          <div class="item-inner">
-            <div class="box bg-white shadow p-30">
-              <figure class="main rounded mb-30">
-                <div class="item-detailed-image"><img src="{{relative_url}}/assets/images/shop/okladka-sukces.webp" alt="" /><img src="{{relative_url}}/assets/images/shop/okladka-sukces.webp" alt="" /></div>
-                <span class="item-label bg-meander">Nowość!</span>
-              </figure>
-              <div class="item-content">
-                <h2 class="post-title mb-10"><a target="_blank" href="#">Sukces to nie przypadek. Zmień swoje wybory...</a></h2>
-                <div class="price mb-0"><span class="amount">59.90 zł</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item item-detailed">
-          <div class="item-inner">
-            <div class="box bg-white shadow p-30">
-              <figure class="main rounded mb-30">
-                <div class="item-detailed-image"><img src="{{relative_url}}/assets/images/shop/Czuwanie-okladka-2025_300.webp" alt="" /><img src="{{relative_url}}/assets/images/shop/Czuwanie-okladka-2025_300.webp" alt="" /></div>
-                <span class="item-label bg-meander">Nowość!</span>
-              </figure>
-              <div class="item-content">
-                <h2 class="post-title mb-10"><a target="_blank" href="https://ksiegarnia.bernardinum.com.pl/pl/p/Chrzescijanskie-czuwanie-przy-zmarlym/2382">Chrześcijańskie czuwanie przy zmarłym</a></h2>
-                <div class="price mb-0"><span class="amount">14.90 zł</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item item-detailed">
-          <div class="item-inner">
-            <div class="box bg-white shadow p-30">
-              <figure class="main rounded mb-30">
-                <div class="item-detailed-image"><img src="{{relative_url}}/assets/images/shop/Okladka-OdejscieWPapieza_okl_IT_300.webp" alt="" /><img src="{{relative_url}}/assets/images/shop/Okladka-OdejscieWPapieza_okl_IT_300.webp" alt="" /></div>
-                <span class="item-label bg-meander">Nowość!</span>
-              </figure>
-              <div class="item-content">
-                <h2 class="post-title mb-10"><a target="_blank" href="https://ksiegarnia.bernardinum.com.pl/pl/p/Laddio-al.-Grande-Papa.-20-Anni-Fa-album%2C-wersja-wloska-/2381">L'addio al. Grande Papa. 20 Anni Fa – album, wersja włoska</a></h2>
-                <div class="price mb-0"><span class="amount">24.90 zł</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% else %}
+        <p>Brak produktów do wyświetlenia.</p>
+        {% endif %}
       </div>
     </div>
   </div>

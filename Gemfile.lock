@@ -28,6 +28,7 @@ GEM
       base64 (~> 0.2.0)
       logger (~> 1.6.5)
       simpleidn (~> 0.2.1)
+    dotenv (2.8.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -272,6 +273,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   eventmachine (= 1.2.7)!
   github-pages
   jekyll-archives

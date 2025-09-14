@@ -3696,10 +3696,17 @@ th {
 }
 .item-detailed figure .item-detailed-image {
     display: block;
+    aspect-ratio: 5 / 7;
+}
+.item-detailed-image img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
 }
 .item-detailed figure img {
     width: 100%;
-    height: auto;
+    /*height: auto;*/
+    object-fit: cover;
 }
 .item-detailed figure img:first-child {
     -webkit-backface-visibility: hidden;
@@ -3748,8 +3755,8 @@ th {
     left: 15px;
     text-transform: uppercase;
     color: var(--color-white);
-    font-size: 0.6rem;
-    font-weight: 500;
+    font-size: 0.5rem;
+    font-weight: 600;
     line-height: 2.5rem;
     width: 2.5rem;
     height: 2.5rem;
@@ -3855,6 +3862,7 @@ th {
 .item-detailed .price del {
     margin-right: 3px;
 }
+*/
 /*-----------------------------------------------------------------------------------*/
 /*  45. RATING
 /*-----------------------------------------------------------------------------------*/

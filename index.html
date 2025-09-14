@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Wydawnictwo Bernardinum
-meta_title: Wydawnictwo Bernardinum
+meta_title: Wydawnictwo Bernardinum – Książki z Duszą, Druk z Pasją
 meta_description: |
-  Szeroki wybór książek religijnych, historycznych i podróżniczych. Dewocjonalia, audiobooki, wydania reprintowe. Sprawdź ofertę! 
+  Wydawnictwo Bernardinum to połączenie tradycji i nowoczesności. Publikujemy książki religijne, historyczne, podróżnicze i literaturę piękną. Oferujemy profesjonalne usługi drukarskie oraz wydajemy dwutygodnik „Pielgrzym”. Poznaj naszą misję i autorów! 
 custom_color: purple
 custom_font: font2
 
@@ -95,11 +95,12 @@ teams_carousel:
   type: box
   title: NASI AUTORZY
   sub_title: |
-    Współpracujemy z wieloma wybitnymi autorami, <br class="d-none d-lg-block"> których twórczość wzbogaca ofertę wydawniczą. 
+    Naszą ofertę tworzą autorzy, którzy zmieniają spojrzenie na świat. 
 
 subscribe_area:
   enable: true
   title: "Podaj swój e-mail, a my wyślemy Ci kupon rabatowy z 20% zniżką na nasze książki!"
+  img_url: "assets/images/art/bernardunum-kupon-rabat-20@2x.png"
   img_1x: "/assets/images/art/bernardunum-kupon-rabat-20@2x.png"
   img_2x: "/assets/images/art/bernardunum-kupon-rabat-20@2x.png"
   action_url: "https://submit-form.com/Pab72KVv4"
@@ -132,7 +133,6 @@ subscribe_area:
                data-responsive="off" 
                data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
           </div>
-		  <!-- /.tp-caption -->
 		  {% if page.hero_area.slider_image %}
           <div class="tp-caption" 
                data-x="left" 
@@ -149,7 +149,6 @@ subscribe_area:
                data-ww="['750','550','550','550']" 
                data-hh="auto" alt="{{page.hero_area.title}}" />
           </div>
-		  <!-- /.tp-caption -->
 		  {% endif %}
 		  {% if page.hero_area.title %}
           <div class="tp-caption font-weight-600 color-dark" 
@@ -167,7 +166,6 @@ subscribe_area:
                data-responsive_offset="on" style="z-index: 9;"> {{page.hero_area.title}}
           </div>
           {% endif %}
-		  <!-- /.tp-caption -->
 		  {% if page.hero_area.sub_title %}
           <div class="tp-caption font-weight-400 color-dark" 
                data-x="['left','left','left','left']" 
@@ -183,7 +181,6 @@ subscribe_area:
                data-responsive="on" 
                data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.sub_title}}
           </div>
-		  <!-- /.tp-caption -->
 		  {% endif %}
 		  {% if page.hero_area.button_text %}
           <a class="tp-caption btn btn-l btn-default scroll" 
@@ -197,17 +194,13 @@ subscribe_area:
                data-responsive="on" 
                data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.button_url}}"> {{page.hero_area.button_text}}
           </a>
-		  <!-- /.tp-caption -->
 		  {% endif %}
         </li>
       </ul>
       <div class="tp-bannertimer tp-bottom"></div>
     </div>
-    <!-- /.rev_slider -->
   </div>
-  <!-- /.rev_slider_wrapper -->
 </div>
-<!-- /.wrapper -->
 {% endif %}
 
 {% if page.services_area.enable %}
@@ -282,7 +275,6 @@ subscribe_area:
     {% endif %}
   </div>
 </div>
-<!-- /.wrapper -->
 {% endif %}
 
 {% if page.testimonials.enable %}
@@ -308,19 +300,14 @@ subscribe_area:
               </div>
             </blockquote>
           </div>
-          <!-- /.item -->
           {% endfor %}
         </div>
-        <!-- /.owl-carousel -->
         <div class="space20 d-lg-none"></div>
         <div class="space60 d-md-none"></div>
       </div>
     </div>
-    <!--/.row -->
   </div>
-  <!-- /.container -->
 </div>
-<!-- /.wrapper -->
 {% endif %}
 
 {% if page.portfolios_area.enable %}
@@ -354,7 +341,6 @@ subscribe_area:
         </div>
       </div>
     </div>
-    <!-- /.grid -->
     {% if page.portfolios_area.button_text %}
     <div class="space20"></div>
     <div class="text-center">
@@ -362,9 +348,7 @@ subscribe_area:
     </div>
     {% endif %}
   </div>
-  <!-- /.container -->
 </div>
-<!-- /.wrapper -->
 {% endif %}
 
 <div class="wrapper white-wrapper">
@@ -402,19 +386,13 @@ subscribe_area:
               </div>
             </div>
           </div>
-          <!--/column -->
           {% endfor %}
         </div>
-        <!--/.row -->
       </div>
-      <!--/column -->
     </div>
-    <!--/.row -->
     {% endif %}
   </div>
-  <!-- /.container -->
 </div>
-<!-- /.wrapper -->
 
 {% include components/shop/products-new-carousel.html %}
 

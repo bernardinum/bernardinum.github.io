@@ -7,8 +7,7 @@
 <meta name="description" content="
          Odkryj książki Wydawnictwa Bernardinum – literatura, reportaże, biografie i albumy. Pasja do słowa i wartościowe treści w jednym miejscu!">
 
-  <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:url" content=" /404.html ">
 <meta property="og:title" content=" Błąd 404 ">
 <meta property="og:description" content="
@@ -16,7 +15,6 @@
 
 <meta property="og:image" content="/assets/images/meta-og-image.webp" />
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="/404.html">
 <meta property="twitter:title" content=" Błąd 404 ">
@@ -34,9 +32,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css" />
 <link rel="stylesheet" type="text/css" href="/assets/type/type.css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-<!-- Global Color Scheme for all Pages-->
 
-<!-- Global Font Scheme font-->
 
 
 <link rel="stylesheet" type="text/css" href="/assets/css/font/OpenSans.css">
@@ -45,7 +41,25 @@
 
   <script src="https://unpkg.com/@formspark/formtrack" async></script>
 <script src="https://unpkg.com/@botpoison/browser" async></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
   
+    gtag('consent', 'default', {
+      analytics_storage: 'denied'
+    });
+  </script>
+  
+<script async data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-LRKDLCW8FW"></script>
+<script data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LRKDLCW8FW');
+</script>
+
+
 </head>
 <body >
   <div class="content-wrapper">
@@ -54,13 +68,13 @@
   class="navbar absolute transparent navbar-hover-opacity nav-uppercase navbar-expand-lg">
   <div class="container ">
     <div class="navbar-brand" data-default-logo="black">
-      <a href="http://bernardinum.github.io"><img 
+      <a href="http://localhost:4000"><img 
         src="/assets/images/logo-light.webp" 
         srcset="/assets/images/logo-light.webp 1x, /assets/images/logo-light@2x.webp 2x"
         class="logo-light d-none" 
         alt="Wydawnictwo Bernardinum" /></a>
   
-      <a href="http://bernardinum.github.io"><img 
+      <a href="http://localhost:4000"><img 
         src="/assets/images/logo.webp" 
         srcset="/assets/images/logo.webp 1x, /assets/images/logo@2x.webp 2x"
         class="logo-dark " 
@@ -97,7 +111,7 @@
     </div>
     <div class="navbar-collapse offcanvas-nav">
       <div class="offcanvas-header d-lg-none d-xl-none">
-        <a href="http://bernardinum.github.io">
+        <a href="http://localhost:4000">
           <img src="/assets/images/logo-light.webp"
             srcset="/assets/images/logo-light.webp 1x, /assets/images/logo-light@2x.webp 2x"
             alt="Wydawnictwo Bernardinum" /></a>
@@ -140,7 +154,7 @@
 </nav>
 <div class="offcanvas-info inverse-text">
     <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
-    <a href="http://bernardinum.github.io">
+    <a href="http://localhost:4000">
       <img src="/assets/images/logo-light.webp"
         srcset="/assets/images/logo-light.webp 1x, /assets/images/logo-light@2x.webp 2x"
         class=" logo-light "
@@ -205,7 +219,7 @@
 <footer class=" dark-wrapper inverse-text text-center ">
     <div class="container inner pt-80 pb-80">
       <div class="widget"> 
-        <a href="http://bernardinum.github.io">
+        <a href="http://localhost:4000">
           
           
             <img src="/assets/images/logo-light.webp" srcset="/assets/images/logo-light.webp 1x, /assets/images/logo-light@2x.webp 2x" alt="Wydawnictwo Bernardinum" />
@@ -213,7 +227,7 @@
         </a>          
         <div class="space30"></div>
         <p style="font-size: 0.7rem;">ul. Bpa Dominika 11 <br>83-130 Pelplin<br />
-        © 2025 Wydawnictwo Bernardinum. All rights reserved.</p>
+        © 2025 Wydawnictwo Bernardinum. All rights reserved. </p>
         <div class="space10"></div>
         <ul class="social social-mute social-s ms-auto">
             
@@ -247,6 +261,7 @@
 <script src="/assets/js/plugins.js"></script>
 <script src="/assets/js/simple-jekyll-search.min.js"></script>
 <script src="/assets/js/scripts.js"></script>
+<script type="module" src="/assets/js/cookieconsent-config.js"></script>
 
   
 </body>

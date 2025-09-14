@@ -9,6 +9,7 @@ layout: default
   <div class="container inner">
     <div class="blog grid grid-view boxed">
       <div class="row isotope">
+        {% if site.data.news and site.data.news.size > 0 %}
           {% for post in paginator.posts %}
           {% include posts/loops/post-loop.html 
             title_length=27
@@ -17,10 +18,13 @@ layout: default
             is_grid=true
           %}
           {% endfor %}
-          <p class="lead larger text-center">Na razie nic tu nie ma.</p>
+        {% else %}
+          <p class="lead larger text-center">Brak wpisów do wyświetlania.</p>
+        {% endif %}
       </div>
     </div>
     {% include utilities/pagination.html %}
   </div>
 </div>
+
 {% include layouts/footer/footer-3.html %}

@@ -31,8 +31,8 @@ copyright_text: "© 2025 Wydawnictwo Bernardinum. All rights reserved."
 
 # Site Wide Google Analytics
 google_analytics:
-  enable: false
-  key: "UA-664136761-1"  # UA-664136761-1
+  enable: true
+  key: "G-LRKDLCW8FW" 
 
 # Site Wide Google Map  
 google_map: |
@@ -71,7 +71,7 @@ external_links:
 
 # Site Wide External Links for footer
 external_links_02:
-  title: "Need Help?"
+  title: "Pomoc"
   links:
     - url: "#"
       text: "Support"

@@ -1,4 +1,3 @@
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content=" {{page.url}} ">
 <meta property="og:title" content="{% if page.meta_title %} {{ page.meta_title }} {% elsif page.title %} {{ page.title }} {% else %} {{ site.data.general_settings.title }}{% endif %}">
@@ -9,7 +8,6 @@
 {% elsif site.data.general_settings.meta_og_image %}
 <meta property="og:image" content="{{ site.data.general_settings.meta_og_image | relative_url }}" />
 {% endif %}
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{page.url}}">
 <meta property="twitter:title" content="{% if page.meta_title %} {{ page.meta_title }} {% elsif page.title %} {{ page.title }} {% else %} {{ site.data.general_settings.title }}{% endif %}">
