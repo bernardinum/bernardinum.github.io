@@ -1,2 +1,34 @@
+# === Jekyll ===
+_site/
+.jekyll-metadata
+.sass-cache/
+.cache/
+*.gem
+Gemfile.lock
+
+# === Środowisko ===
 .env
+.env.local
+.env.*.local
+
+# === Logi i tymczasowe ===
+*.log
+*.tmp
+*.swp
+
+# === Edytory ===
+.vscode/
+
+# === Systemowe ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === CI/CD ===
+netlify.toml
+cloudflare.toml
+github.toml
+
+
 
