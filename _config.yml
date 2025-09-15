@@ -1,5 +1,5 @@
 baseurl: ""
-url: "http://bernardinum.github.io" 
+url: "https://www.bernardinum.com.pl" 
 permalink: "/:title"
 
 plugins:
