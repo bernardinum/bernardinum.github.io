@@ -2,6 +2,8 @@ baseurl: ""
 url: "https://www.bernardinum.com.pl" 
 permalink: "/:title"
 
+repository: bernardinum/bernardinum.github.io
+
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
