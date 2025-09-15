@@ -6,15 +6,16 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-archives
+  - jekyll-sitemap
 
 collections:
   authors:
-    output: true
+    output: false
   shop_items:
-    output: true
-    permalink: /shop/:name
+    output: false
+    permalink: /sklep/:name
   portfolio:
-      output: true
+      output: false
       permalink: /portfolio/:name
       
 

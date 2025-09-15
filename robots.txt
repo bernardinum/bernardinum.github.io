@@ -3,4 +3,7 @@ layout: none
 ---
 
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /twoj-kupon-rabatowy/
+
+Sitemap: {{site.url}}/sitemap.xml

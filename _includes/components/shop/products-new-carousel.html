@@ -1,9 +1,9 @@
-{% assign available_books = site.data.books | where: "availability", "in stock" | reverse | slice: 0, 6 %}
+{% assign available_books = site.data.books | where: "availability", "in stock" | reverse | slice: 0, 12 %}
 <div class="wrapper gray-wrapper">
   <div class="container inner">
     <h2 class="section-title text-center">Nowości wydawnicze</h2>
     <div class="grid grid-view boxed">
-      <div class="carousel owl-carousel gap-small" data-margin="0" data-dots="true" data-autoplay="true" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "3"}}'>
+      <div class="carousel owl-carousel gap-small" data-margin="0" data-dots="true" data-autoplay="true" data-loop="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "3"}}'>
         {% if site.data.books and site.data.books.size > 0 %}
         {% for produkt in available_books %}
         <div class="item item-detailed">
