@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /twoj-kupon-rabatowy/
 
-Sitemap: http://bernardinum.github.io/sitemap.xml
+Sitemap: https://www.bernardinum.com.pl/sitemap.xml

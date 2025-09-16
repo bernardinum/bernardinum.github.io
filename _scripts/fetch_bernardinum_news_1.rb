@@ -1,53 +1,21 @@
+
 require 'dotenv/load'
 require 'net/http'
 require 'json'
 require 'uri'
 require 'fileutils'
-require 'base64'
 
 # --- Konfiguracja ---
-STORE_URL     = ENV['BERNARDINUM_STORE_URL']   
-CLIENT_ID     = ENV['BERNARDINUM_CLIENT_ID']
-CLIENT_SECRET = ENV['BERNARDINUM_CLIENT_SECRET']
-
-DATA_DIR    = '_data'.freeze
-OUTPUT_FILE = 'news.json'.freeze
+STORE_URL      = ENV['BERNARDINUM_STORE_URL']     
+API_TOKEN      = ENV['BERNARDINUM_API_TOKEN']     
+DATA_DIR       = '_data'.freeze
+OUTPUT_FILE    = 'news.json'.freeze
 # --------------------
 
 def debug_log(label, data)
   puts "\n=== #{label} ==="
   puts data
   puts "=== KONIEC #{label} ===\n\n"
-end
-
-def get_access_token(store_url, client_id, client_secret)
-  uri = URI("#{store_url}/webapi/rest/auth")
-  req = Net::HTTP::Post.new(uri)
-  auth_header = "Basic #{Base64.strict_encode64("#{client_id}:#{client_secret}")}"
-  req['Authorization'] = auth_header
-
-  debug_log("Żądanie AUTH", {
-    url: uri.to_s,
-    method: "POST",
-    headers: req.to_hash
-  })
-
-  res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-    http.request(req)
-  end
-
-  debug_log("Odpowiedź AUTH", {
-    code: res.code,
-    message: res.message,
-    headers: res.to_hash,
-    body: res.body
-  })
-
-  unless res.is_a?(Net::HTTPSuccess)
-    raise "Błąd autoryzacji: #{res.code} #{res.message}"
-  end
-
-  JSON.parse(res.body)['access_token']
 end
 
 def get_news(store_url, token)
@@ -73,22 +41,23 @@ def get_news(store_url, token)
   })
 
   unless res.is_a?(Net::HTTPSuccess)
-    raise "Błąd pobierania aktualności: #{res.code} #{res.message}"
+    raise "Błąd pobierania aktualności: #{res.code} #{res.message} - #{res.body}"
   end
 
   JSON.parse(res.body)['list']
 end
 
 begin
-  puts "INFO: Autoryzacja w API Shoper..."
-  access_token = get_access_token(STORE_URL, CLIENT_ID, CLIENT_SECRET)
-  raise "Nie udało się uzyskać tokena dostępowego." if access_token.nil?
+  raise "STORE_URL nie jest ustawiony!" if STORE_URL.nil? || STORE_URL.strip.empty?
+  raise "API_TOKEN nie jest ustawiony!" if API_TOKEN.nil? || API_TOKEN.strip.empty?
 
-  puts "INFO: Autoryzacja pomyślna. Pobieranie aktualności..."
-  news_list = get_news(STORE_URL, access_token)
+  puts "INFO: Pobieranie aktualności z Shoper API..."
+  news_list = get_news(STORE_URL, API_TOKEN)
 
   processed_news = news_list.map do |news_item|
-    translation = news_item['translations']['pl_PL']
+    puts "DEBUG: news_item = #{news_item.inspect}"
+    translation = news_item.dig('translations', 'pl_PL')
+    next nil unless translation # pomiń jeśli brak tłumaczenia
     image_full_url = news_item['gfx'] ? "#{STORE_URL}/#{news_item['gfx']}" : nil
 
     {
@@ -98,7 +67,7 @@ begin
       'image_url'     => image_full_url,
       'link'          => translation['permalink']
     }
-  end
+  end.compact
 
   FileUtils.mkdir_p(DATA_DIR)
   output_path = File.join(DATA_DIR, OUTPUT_FILE)
