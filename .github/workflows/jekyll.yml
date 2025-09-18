@@ -32,11 +32,11 @@ jobs:
 
       - name: Run fetch_book.rb
         run: ruby _scripts/fetch_book.rb
-		continue-on-error: true
+		    continue-on-error: true
 
       - name: Run fetch_bernardinum_news.rb
         run: ruby _scripts/fetch_bernardinum_news.rb
-		continue-on-error: true
+		    continue-on-error: true
 
       - name: Setup Pages
         id: pages
