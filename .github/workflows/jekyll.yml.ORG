@@ -2,7 +2,7 @@ name: Daily Jekyll Build & Deploy
 
 on:
   schedule:
-    - cron: '0 8 * * *' 
+    - cron: '0 2 * * *' 
   workflow_dispatch:
   push:
     branches: ['master']
