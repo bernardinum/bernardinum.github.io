@@ -2,7 +2,7 @@ name: Daily Jekyll Build & Deploy
 
 on:
   schedule:
-    - cron: '45 12 * * *' 
+    - cron: '* 13 * * *' 
   workflow_dispatch:
   push:
     branches: ['master']
@@ -32,8 +32,8 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
 
-      - name: Run fetch_book.rb
-        run: ruby _scripts/fetch_book.rb
+      - name: Run fetch_books.rb
+        run: ruby _scripts/fetch_books.rb
 		    continue-on-error: true
 
       - name: Run fetch_bernardinum_news.rb
