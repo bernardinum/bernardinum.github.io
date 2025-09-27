@@ -62,13 +62,13 @@ process_area:
 
 testimonials:
   enable: true
-  image: "/assets/images/art/ks-wojtek-weckowski.webp"
+  image: ""
   feedback:
 
     - quote: |
         Działalność Wydawnictwa Bernardinum od samego początku opiera się na misji szerzenia wartości chrześcijańskich, kulturowych i edukacyjnych. Współpracujemy zarówno z uznanymi autorami, jak i z nowymi twórcami, których publikacje obejmują szerokie spektrum tematów – od literatury podróżniczej i historycznej, przez religię, aż po prozę. 
-      name: "ks. dr Wojciech Węckowski"
-      designation: "Redaktor Naczelny"
+      name: ""
+      designation: ""
 
 video_area:
   enable: true
@@ -280,19 +280,19 @@ subscribe_area:
 
 {% if page.testimonials.enable %}
 <div class="wrapper light-wrapper">
-  <div class="container inner pb-0">
+  <div class="container inner pb-15 pt-30">
     <div class="row align-items-center">
       {% if page.testimonials.image %}
       <div class="col-md-5 col-lg-4 offset-lg-1 d-none d-md-flex">
         <figure><img src="{{page.testimonials.image}}" alt="{{page.testimonials.image}}"></figure>
       </div>
       {% endif %}
-      <div class="col-md-7 col-lg-6 pl-60 pl-md-15">
+      <div class="col-md-12 col-lg-12 pl-30 pl-md-15">
         <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
           {% for quote in page.testimonials.feedback %}
           <div class="item">
             <blockquote class="icon icon-left larger text-left">
-              <p>"{{quote.quote}}"</p>
+              <p>{{quote.quote}}</p>
               <div class="blockquote-details">
                 <div class="info p-0">
                   <h6 class="mb-0">{{quote.name}}</h6>
