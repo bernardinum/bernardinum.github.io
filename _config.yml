@@ -1,6 +1,6 @@
 ---
 title: Bernardinum.Github.Io
-timezone: UTC
+timezone: Europe/Warsaw
 collections:
   authors:
     title: Authors
@@ -19,7 +19,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-baseurl: ''
+baseurl: 
 url: https://www.bernardinum.com.pl
 permalink: "/:title"
 repository: bernardinum/bernardinum.github.io
@@ -39,7 +39,7 @@ pagination:
     permalink: "/blog/page/:num/"
     title: ":title - page :num"
     limit: 0
-    tag: ''
+    tag: 
     trail:
       before: 2
       after: 2
