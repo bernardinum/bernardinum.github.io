@@ -1,60 +1,60 @@
-baseurl: ""
-url: "https://www.bernardinum.com.pl" 
-permalink: "/:title"
-
-repository: bernardinum/bernardinum.github.io
-
-plugins:
-  - jekyll-feed
-  - jekyll-paginate-v2
-  - jekyll-archives
-  - jekyll-sitemap
-
+---
+title: Bernardinum.Github.Io
+timezone: UTC
 collections:
   authors:
+    title: Authors
     output: false
-  shop_items:
-    output: false
-    permalink: /sklep/:name
   portfolio:
-      output: false
-      permalink: /portfolio/:name
-      
-
+    title: Portfolio
+    output: false
+    permalink: "/portfolio/:name"
+  posts:
+    title: Posts
+    output: true
+  shop_items:
+    title: Shop Items
+    output: false
+    permalink: "/sklep/:name"
+  uploads:
+    title: Uploads
+    output: true
+baseurl: ''
+url: https://www.bernardinum.com.pl
+permalink: "/:title"
+repository: bernardinum/bernardinum.github.io
+plugins:
+- jekyll-feed
+- jekyll-paginate-v2
+- jekyll-archives
+- jekyll-sitemap
 pagination:
   news:
     enabled: true
     debug: true
-    data: 'news'
+    data: news
     per_page: 5
-    sort_field: 'add_date'
+    sort_field: add_date
     sort_reverse: true
-    permalink: '/blog/page/:num/'
-    title: ':title - page :num'
+    permalink: "/blog/page/:num/"
+    title: ":title - page :num"
     limit: 0
     tag: ''
     trail:
       before: 2
       after: 2
-
-# Old jekyll-paginate pagination logic
-#paginate: 3
-#paginate_path: "/legacy/page:num/"
-
 jekyll-archives:
   enabled:
-    - tags
-    - categories
+  - tags
+  - categories
   layouts:
     tag: tag
     category: category
   permalinks:
-    tag: '/tag/:name/'
-    category: '/category/:name/'
-
+    tag: "/tag/:name/"
+    category: "/category/:name/"
 feed:
   collections:
     posts:
       path: "/index.xml"
-
 highlighter: rouge
