@@ -18,4 +18,3 @@ content:
           - name: menu_type
             label: Typ menu
             type: text
-            options: simple
