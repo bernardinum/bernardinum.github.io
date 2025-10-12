@@ -9,12 +9,12 @@ content:
     path: _data/navigation.yml
     format: yaml
     fields:
-          - name: text
-            label: Tekst
-            type: text
-          - name: url
-            label: URL
-            type: text
-          - name: menu_type
-            label: Typ menu
-            type: text
+      - name: text
+        label: Tekst
+        type: text
+      - name: url
+        label: URL
+        type: text
+      - name: menu_type
+        label: Typ menu
+        type: text
