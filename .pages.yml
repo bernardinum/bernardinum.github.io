@@ -17,7 +17,7 @@ content:
 		type: text
 	  - name: description
 		label: Opis
-		type: textarea
+		type: text
 	  - name: image
 		label: Zdjęcie
 		type: image
