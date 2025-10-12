@@ -12,9 +12,6 @@ content:
 	  - name: name
 		label: Imię i nazwisko
 		type: text
-	  - name: designation
-		label: Stanowisko
-		type: text
 	  - name: description
 		label: Opis
 		type: text
