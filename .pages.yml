@@ -7,7 +7,7 @@ content:
     label: Nawigacja
     type: collection
     path: _data/navigation.yml
-    format: yaml
+    format: text
     fields:
       main_menu:
         type: list
