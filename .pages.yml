@@ -3,7 +3,7 @@ media:
   output: /assets/images
   extensions: [png, jpg, jpeg, webp, svg] 
 content:
-  - name: team_carousel
+  - name: members
     type: collection
     label: Autorzy
 	path: _data/team_carousel.yml
