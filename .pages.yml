@@ -3,19 +3,23 @@ media:
   output: /assets/images
   extensions: [png, jpg, jpeg, webp, svg] 
 content:
-  - name: members
+  - name: navigation
+    label: Nawigacja
     type: collection
-    label: Autorzy
-	path: _data/team_carousel.yml
-	format: yaml
-	fields:
-	  - name: name
-		label: Imię i nazwisko
-		type: text
-	  - name: description
-		label: Opis
-		type: text
-	  - name: image
-		label: Zdjęcie
-		type: image
-		directory: assets/images/authors
+    path: _data/navigation.yml
+    format: yaml
+    fields:
+      main_menu:
+        type: list
+        label: Menu główne
+        fields:
+          - name: text
+            label: Tekst
+            type: text
+          - name: url
+            label: URL
+            type: text
+          - name: menu_type
+            label: Typ menu
+            type: select
+            options: ["simple", "dropdown", "mega"]
