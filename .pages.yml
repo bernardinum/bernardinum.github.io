@@ -1,33 +1,24 @@
 media:
   input: assets/images
   output: /assets/images
-  extensions: [png, jpg, jpeg, webp, svg]
-
+  extensions: [png, jpg, jpeg, webp, svg] 
 content:
-	- name: team_carousel
-	  label: Autorzy
-	  type: collection
-	  path: _data/team_carousel.yml
-	  format: yaml
-	  fields:
-		members:
-		  type: list
-		  label: Członkowie zespołu
-		  fields:
-			- name: name
-			  label: Imię i nazwisko
-			  type: text
-			- name: designation
-			  label: Stanowisko
-			  type: text
-			- name: description
-			  label: Opis
-			  type: textarea
-			- name: image
-			  label: Zdjęcie
-			  type: image
-			  directory: assets/images/authors
-
-settings:
-  content:
-    merge: true
+  - name: team_carousel
+    type: collection
+    label: Autorzy
+	path: _data/team_carousel.yml
+	format: yaml
+	fields:
+	  - name: name
+		label: Imię i nazwisko
+		type: text
+	  - name: designation
+		label: Stanowisko
+		type: text
+	  - name: description
+		label: Opis
+		type: textarea
+	  - name: image
+		label: Zdjęcie
+		type: image
+		directory: assets/images/authors
