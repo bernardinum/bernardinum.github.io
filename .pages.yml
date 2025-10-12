@@ -7,12 +7,8 @@ content:
     label: Nawigacja
     type: collection
     path: _data/navigation.yml
-    format: text
+    format: yaml
     fields:
-      main_menu:
-        type: list
-        label: Menu główne
-        fields:
           - name: text
             label: Tekst
             type: text
@@ -21,5 +17,5 @@ content:
             type: text
           - name: menu_type
             label: Typ menu
-            type: select
-            options: ["simple", "dropdown", "mega"]
+            type: text
+            options: simple
