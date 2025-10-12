@@ -18,3 +18,14 @@ content:
       - name: menu_type
         label: Typ menu
         type: text
+  - name: config
+    label: Jekyll config
+    path: _config.yml
+    type: file
+    fields:
+      - name: title
+        label: Website title
+        type: string
+      - name: timzone
+        label: Strefa czasowa
+        type: string
