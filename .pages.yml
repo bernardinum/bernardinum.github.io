@@ -5,7 +5,7 @@ media:
 content:
   - name: navigation
     label: Nawigacja
-    type: collection
+    type: file
     path: '_data/navigation.yml'
     format: yaml
     fields:
