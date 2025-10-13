@@ -3,7 +3,7 @@ media:
   output: /assets/images
   extensions: [png, jpg, jpeg, webp, svg] 
 content:
-  - name: navigation
+  - name: main_menu
     label: Nawigacja
     type: collection
     path: '_data/navigation.yml'
