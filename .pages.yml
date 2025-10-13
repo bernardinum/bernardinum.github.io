@@ -5,11 +5,11 @@ media:
 content:
   - name: navigation
     label: Nawigacja
-    path: '_data/navigation.yml'
+    path: _data/navigation.yml
     format: yaml
     fields:
       main_menu:
-        type: list
+        type: text
         label: Menu główne
     type: file
     fields:
