@@ -10,13 +10,13 @@ content:
     fields:
       - name: text
         label: Tekst
-        type: text
+        type: string
       - name: url
         label: URL
-        type: text
+        type: string
       - name: menu_type
         label: Typ menu
-        type: text
+        type: string
   - name: config
     label: Jekyll config
     path: _config.yml
