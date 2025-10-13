@@ -9,7 +9,7 @@ content:
     format: yaml
     fields:
       main_menu:
-        type: text
+        type: list
         label: Menu główne
     type: file
     fields:
