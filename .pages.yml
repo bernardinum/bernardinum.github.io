@@ -1,38 +1,140 @@
+# Pages CMS config for bernardinum.github.io
+# Edytor: https://app.pagescms.org
+# Dokumentacja: pagescms.org/docs/configuration
+
+settings:
+  hide: false
+  content:
+    merge: true   # nie nadpisuj nieedytowanych fragmentów plików
+
+# Gdzie trzymamy media (obrazy, pliki…)
 media:
-  input: assets/images
-  output: /assets/images
-  extensions: [png, jpg, jpeg, webp, svg] 
+  input: assets
+  output: /assets
+  # możesz ograniczyć rozszerzenia/categorie jeśli chcesz
+
+# Reużywalne komponenty (DRY)
+components:
+  navItem:
+    label: Navigation item
+    type: object
+    fields:
+      - { name: name, label: Label, type: string, required: true }
+      - { name: link, label: URL/Path, type: string, required: true, description: "Np. /about/ lub /" }
+      - name: children
+        label: Children (dropdown)
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Label, type: string, required: true }
+          - { name: link, label: URL/Path, type: string, required: true }
+
+  teamMember:
+    label: Team member
+    type: object
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string }
+      - { name: photo, label: Photo, type: image }
+      - { name: bio, label: Bio (short), type: text }
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: url, label: URL, type: string }
+
+  hero:
+    label: Hero section
+    type: object
+    fields:
+      - { name: headline, label: Headline, type: text }
+      - { name: subheadline, label: Subheadline, type: text }
+      - { name: cover, label: Cover image, type: image }
+      - { name: cta_text, label: CTA text, type: string }
+      - { name: cta_url, label: CTA URL, type: string }
+
+# Zawartość udostępniona w CMS
 content:
+  # 1) _data/navigation.yml
   - name: navigation
-    label: Nawigacja
+    label: Navigation
     type: file
     path: _data/navigation.yml
     format: yaml
     fields:
-      main_menu:
-        type: list
-        label: Menu główne
-        fields:
-          - name: text
-            label: Tekst
-            type: string
-          - name: url
-            label: URL
-            type: string
-          - name: menu_type
-            label: Typ menu
-            type: string
-  - name: config
-    label: Jekyll config
-    path: _config.yml
+      - name: items
+        label: Menu items
+        type: object
+        list: true
+        component: navItem
+
+  # 2) _data/team_carousel.yml
+  - name: team_carousel
+    label: Team carousel
     type: file
+    path: _data/team_carousel.yml
+    format: yaml
     fields:
-      - name: title
-        label: Website title
-        type: string
-      - name: timzone
-        label: Strefa czasowa
-        type: string
-      - name: url
-        label: Strona główna
-        type: string
+      - name: team
+        label: Team members
+        type: object
+        list: true
+        component: teamMember
+
+  # 3) index.html (strona główna)
+  - name: home
+    label: Home page
+    type: file
+    path: index.html
+    # domyślnie: yaml-frontmatter
+    fields:
+      - { name: layout, label: Layout, type: string, hidden: true }
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: cover, label: Social/OG image, type: image }
+      - name: hero
+        label: Hero
+        component: hero
+      - { name: body, label: Page content, type: rich-text }
+
+  # 4) about/index.html
+  - name: about
+    label: About page
+    type: file
+    path: about/index.html
+    fields:
+      - { name: layout, label: Layout, type: string, hidden: true }
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: cover, label: Social/OG image, type: image }
+      - { name: body, label: Page content, type: rich-text }
+
+  # 5) contact/index.html
+  - name: contact
+    label: Contact page
+    type: file
+    path: contact/index.html
+    fields:
+      - { name: layout, label: Layout, type: string, hidden: true }
+      - { name: title, label: Title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: email, label: Email, type: string, pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$' }
+      - { name: phone, label: Phone, type: string }
+      - { name: address, label: Address, type: text }
+      - { name: map_embed, label: Map embed (iframe), type: text }
+      - { name: cover, label: Social/OG image, type: image }
+      - { name: body, label: Page content, type: rich-text }
+
+  # 6) privacy/privacy.html
+  - name: privacy
+    label: Privacy policy
+    type: file
+    path: privacy/privacy.html
+    fields:
+      - { name: layout, label: Layout, type: string, hidden: true }
+      - { name: title, label: Title, type: string, default: "Polityka prywatności" }
+      - { name: last_updated, label: Last updated, type: date }
+      - { name: cover, label: Social/OG image, type: image }
+      - { name: body, label: Policy content, type: rich-text }
