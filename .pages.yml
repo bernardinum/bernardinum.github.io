@@ -28,3 +28,6 @@ content:
       - name: timzone
         label: Strefa czasowa
         type: string
+      - name: url
+        label: Strona główna
+        type: string
