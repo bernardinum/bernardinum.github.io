@@ -6,6 +6,11 @@ content:
   - name: navigation
     label: Nawigacja
     path: '_data/navigation.yml'
+    format: yaml
+    fields:
+      main_menu:
+        type: list
+        label: Menu główne
     type: file
     fields:
       - name: text
