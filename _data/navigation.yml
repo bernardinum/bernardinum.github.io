@@ -1,5 +1,4 @@
 main_menu:
-
   - text: "Strona główna"
     url: "/"
     menu_type: "simple"
