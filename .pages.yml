@@ -7,6 +7,9 @@ content:
     label: Nawigacja
     type: collection
     path: '_data/navigation.yml'
+    view:
+      fields: [ title ]
+      primary: title
     fields:
       - name: text
         label: Tekst
