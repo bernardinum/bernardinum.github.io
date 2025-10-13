@@ -7,7 +7,6 @@ content:
     label: Nawigacja
     type: file
     path: _data/navigation.yml
-    format: yaml
     fields:
       - name: text
         label: Tekst
