@@ -5,23 +5,23 @@ media:
 content:
   - name: navigation
     label: Nawigacja
+    type: file
     path: _data/navigation.yml
     format: yaml
     fields:
       main_menu:
         type: list
         label: Menu główne
-    type: file
-    fields:
-      - name: text
-        label: Tekst
-        type: string
-      - name: url
-        label: URL
-        type: string
-      - name: menu_type
-        label: Typ menu
-        type: string
+        fields:
+          - name: text
+            label: Tekst
+            type: string
+          - name: url
+            label: URL
+            type: string
+          - name: menu_type
+            label: Typ menu
+            type: string
   - name: config
     label: Jekyll config
     path: _config.yml
