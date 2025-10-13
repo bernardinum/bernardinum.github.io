@@ -7,9 +7,6 @@ content:
     label: Nawigacja
     type: file
     path: '_data/navigation.yml'
-    view:
-      fields: [ Tekst, Typ menu ]
-      primary: Tekst
     fields:
       - name: text
         label: Tekst
