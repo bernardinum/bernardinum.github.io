@@ -8,8 +8,8 @@ content:
     type: file
     path: '_data/navigation.yml'
     view:
-      fields: [ title ]
-      primary: title
+      fields: [ Tekst, Typ menu ]
+      primary: Tekst
     fields:
       - name: text
         label: Tekst
