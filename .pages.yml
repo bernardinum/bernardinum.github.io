@@ -10,7 +10,7 @@ settings:
 # Gdzie trzymamy media (obrazy, pliki…)
 media:
   input: assets
-  output: /assets
+  output: /assets/images
   # możesz ograniczyć rozszerzenia/categorie jeśli chcesz
 
 # Reużywalne komponenty (DRY)
