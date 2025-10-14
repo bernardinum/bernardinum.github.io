@@ -9,7 +9,7 @@ settings:
 
 # Gdzie trzymamy media (obrazy, pliki…)
 media:
-  input: assets
+  input: assets/images
   output: /assets/images
   # możesz ograniczyć rozszerzenia/categorie jeśli chcesz
 
