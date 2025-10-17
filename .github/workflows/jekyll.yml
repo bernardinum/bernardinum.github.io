@@ -2,7 +2,7 @@ name: Daily Jekyll Build & Deploy
 
 on:
   schedule:
-    - cron: '* 2 * * *' 
+    - cron: '0 2 * * *' 
   workflow_dispatch:
   push:
     branches: ['master']
@@ -25,19 +25,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-
-      - name: Install Ruby dependencies
-        run: bundle install
+          ruby-version: '3.1' 
+          bundler-cache: true 
         
       - name: Run fetch_books.rb
-        run: ruby _scripts/fetch_books.rb
-        continue-on-error: true
+        run: bundle exec ruby _scripts/fetch_books.rb
 
       - name: Setup Pages
         id: pages
@@ -50,6 +44,8 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
     environment:
