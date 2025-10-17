@@ -3,8 +3,7 @@ _site/
 .jekyll-metadata
 .sass-cache/
 .cache/
-*.gem
-Gemfile.lock
+
 
 # === Środowisko ===
 .env
