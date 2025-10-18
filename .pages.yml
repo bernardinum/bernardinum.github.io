@@ -58,7 +58,7 @@ content:
     format: yaml
     fields:
       - name: main_menu
-        label: Odnośniki
+        label: Odnośnik
         type: object
         list: true
         component: navItem
