@@ -20,6 +20,7 @@ components:
     fields:
       - { name: text, label: Etykieta, type: string, required: true }
       - { name: url, label: URL/Ścieżka, type: string, required: true, description: "Np. /o-nas/ lub /" }
+      - { name: menu_type, type: string, default: "simple" }
 
   teamMember:
     label: Team member
