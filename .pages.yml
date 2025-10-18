@@ -27,9 +27,8 @@ components:
     type: object
     fields:
       - { name: name, label: Name, type: string, required: true }
-      - { name: role, label: Role, type: string }
       - { name: photo, label: Photo, type: image }
-      - { name: bio, label: Bio (short), type: text }
+      - { name: description, label: Bio , type: text }
       - name: links
         label: Links
         type: object
