@@ -135,6 +135,4 @@ content:
     fields:
       - { name: layout, label: Layout, type: string, hidden: true }
       - { name: title, label: Title, type: string, default: "Polityka prywatności" }
-      - { name: last_updated, label: Last updated, type: date }
-      - { name: cover, label: Social/OG image, type: image }
       - { name: body, label: Policy content, type: rich-text }
