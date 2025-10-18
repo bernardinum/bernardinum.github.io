@@ -11,9 +11,8 @@ settings:
 media:
   input: assets/images
   output: /assets/images
-  # możesz ograniczyć rozszerzenia/categorie jeśli chcesz
 
-# Reużywalne komponenty (DRY)
+# Komponenty (DRY)
 components:
   navItem:
     label: Navigation item
@@ -68,7 +67,7 @@ content:
 
   # 3) index.html (strona główna)
   - name: home
-    label: Home page
+    label: Strona główna
     type: file
     path: index.html
     # domyślnie: yaml-frontmatter
@@ -84,7 +83,7 @@ content:
 
   # 4) about/index.html
   - name: about
-    label: About page
+    label: O nas
     type: file
     path: about/index.html
     fields:
@@ -96,7 +95,7 @@ content:
 
   # 5) contact/index.html
   - name: contact
-    label: Contact page
+    label: Kontakt
     type: file
     path: contact/index.html
     fields:
@@ -112,7 +111,7 @@ content:
 
   # 6) privacy/privacy.html
   - name: privacy
-    label: Privacy policy
+    label: Polityka prywatności
     type: file
     path: privacy/privacy.html
     fields:
