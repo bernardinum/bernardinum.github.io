@@ -120,6 +120,5 @@ content:
       label: Polityka prywatności
       type: object
       fields:
-        - { name: enable, label: Enable, type: boolean, default: true }
         - { name: title, label: Sekcja, type: string }
         - { name: description, label: Opis (edytor), type: rich-text }
