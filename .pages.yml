@@ -19,8 +19,8 @@ components:
     label: Navigation item
     type: object
     fields:
-      - { name: name, label: Label, type: string, required: true }
-      - { name: link, label: URL/Path, type: string, required: true, description: "Np. /about/ lub /" }
+      - { name: name, label: Etykieta, type: string, required: true }
+      - { name: link, label: URL/Path, type: string, required: true, description: "Np. /o-nas/ lub /" }
       - name: children
         label: Children (dropdown)
         type: object
