@@ -64,14 +64,13 @@ content:
 
   # 2) _data/team_carousel.yml
   - name: team_carousel
-    label: Team carousel
+    label: Autorzy
     type: file
     path: _data/team_carousel.yml
     format: yaml
     fields:
-      - name: team
-        label: Team members
-        type: object
+      - name: members
+        label: Autorzy
         list: true
         component: teamMember
 
