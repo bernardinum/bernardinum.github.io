@@ -59,7 +59,6 @@ content:
     fields:
       - name: main_menu
         label: Odnośnik
-        type: object
         list: true
         component: navItem
 
