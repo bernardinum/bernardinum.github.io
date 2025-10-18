@@ -26,8 +26,8 @@ components:
     type: object
     fields:
       - { name: name, label: Imię i Nazwisko, type: string, required: true }
-      - { name: image, label: Zdjęcie, type: image, required: true }
-      - { name: description, label: Bio (skrót) , type: text, required: true, description: "Np. /o-nas/ lub /" }
+      - { name: image, label: Zdjęcie, type: image, required: true, description: "Wielkość 400x400px, czarno-białe" }
+      - { name: description, label: Bio (skrót) , type: text, required: true }
 
   hero:
     label: Hero section
