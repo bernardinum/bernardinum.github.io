@@ -19,7 +19,7 @@ components:
     label: Navigation item
     type: object
     fields:
-      - { name: name, label: Etykieta, type: string, required: true }
+      - { name: text, label: Etykieta, type: string, required: true }
       - { name: link, label: URL/Ścieżka, type: string, required: true, description: "Np. /o-nas/ lub /" }
 
   teamMember:
