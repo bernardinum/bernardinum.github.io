@@ -1,5 +1,5 @@
 main_menu:
-  - text: Strona główn
+  - text: Strona główna
     url: /
   - text: O nas
     url: /o-nas/
