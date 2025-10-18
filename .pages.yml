@@ -64,9 +64,6 @@ content:
         label: Autorzy
         list: true
         component: teamMember
-        options:
-          path: authors
-          extensions: [jpg, webp]
 
   # 3) index.html (strona główna)
   - name: home
