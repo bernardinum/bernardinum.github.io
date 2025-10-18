@@ -21,13 +21,6 @@ components:
     fields:
       - { name: name, label: Etykieta, type: string, required: true }
       - { name: link, label: URL/Ścieżka, type: string, required: true, description: "Np. /o-nas/ lub /" }
-      - name: children
-        label: Children (dropdown)
-        type: object
-        list: true
-        fields:
-          - { name: name, label: Label, type: string, required: true }
-          - { name: link, label: URL/Path, type: string, required: true }
 
   teamMember:
     label: Team member
