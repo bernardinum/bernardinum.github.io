@@ -87,10 +87,9 @@ content:
     type: file
     path: about/index.html
     fields:
-      - { name: layout, label: Layout, type: string, hidden: true }
+      - { name: blockquote_area, label: Blockquote, type: text,}
       - { name: title, label: Title, type: string }
       - { name: description, label: Meta description, type: text }
-      - { name: cover, label: Social/OG image, type: image }
       - { name: body, label: Page content, type: rich-text }
 
   # 5) contact/index.html
