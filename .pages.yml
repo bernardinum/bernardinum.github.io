@@ -64,7 +64,6 @@ content:
         label: Autorzy
         list: true
         component: teamMember
-        desc: opis
 
   # 3) index.html (strona główna)
   - name: home
