@@ -52,7 +52,7 @@ components:
 content:
   # 1) _data/navigation.yml
   - name: navigation
-    label: Navigation
+    label: Menu
     type: file
     path: _data/navigation.yml
     format: yaml
