@@ -64,7 +64,7 @@ content:
     path: _data/navigation.yml
     format: yaml
     fields:
-      - name: items
+      - name: main_menu
         label: Menu items
         type: object
         list: true
