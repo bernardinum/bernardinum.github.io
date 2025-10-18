@@ -114,6 +114,7 @@ content:
     type: file
     path: privacy/privacy.html
     fields:
-      - { name: layout, label: Layout, type: string, hidden: true }
       - { name: title, label: Title, type: string, default: "Polityka prywatności" }
       - { name: body, label: Policy content, type: rich-text }
+      - name: privacy_info
+        description: Polityka prywatności i ochrony danych osobowych
