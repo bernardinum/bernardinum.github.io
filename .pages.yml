@@ -121,5 +121,5 @@ content:
       label: Polityka prywatności
       type: object
       fields:
-        - { name: title, label: Sekcja, type: string }
+        - { name: title, label: Podtytuł, type: string }
         - { name: description, label: Opis (edytor), type: rich-text }
