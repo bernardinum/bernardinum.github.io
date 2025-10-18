@@ -26,16 +26,9 @@ components:
     label: Team member
     type: object
     fields:
-      - { name: name, label: Name, type: string, required: true }
+      - { name: name, label: Imię i Nazwisko, type: string, required: true }
       - { name: image, label: Zdjęcie, type: image, required: true }
       - { name: description, label: Bio (skrót) , type: text, required: true }
-      - name: links
-        label: Links
-        type: object
-        list: true
-        fields:
-          - { name: label, label: Label, type: string }
-          - { name: url, label: URL, type: string }
 
   hero:
     label: Hero section
