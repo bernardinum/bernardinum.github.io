@@ -27,7 +27,7 @@ components:
     fields:
       - { name: name, label: Imię i Nazwisko, type: string, required: true }
       - { name: image, label: Zdjęcie, type: image, required: true }
-      - { name: description, label: Bio (skrót) , type: text, required: true }
+      - { name: description, label: Bio (skrót) , type: text, required: true, description: "Np. /o-nas/ lub /" }
 
   hero:
     label: Hero section
