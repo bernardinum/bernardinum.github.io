@@ -190,28 +190,10 @@ content:
       path: contact/index.html     
       format: yaml-frontmatter
       fields:
-    - { name: title,           label: Title,            type: string }
-    - { name: permalink,       label: Permalink,        type: string }
-    - { name: layout,          label: Layout,           type: string, hidden: true }
-    - { name: meta_title,      label: Meta title,       type: string }
-    - { name: meta_description,label: Meta description, type: text }
-    - { name: sub_title,       label: Sub title,        type: string }
-    - name: header_image
-      label: Header image
-      type: image
-      options:
-        # jeśli w .pages.yml masz:
-        # media: { input: assets, output: /assets }
-        # to poniższa ścieżka umieszcza pliki w /assets/images/headers/ (opcjonalnie zmień)
-        path: images/headers
-        extensions: [jpg, jpeg, png, webp]
-    - { name: schema_type,     label: Schema type,      type: string }
-
-    # contact_info
-    - name: contact_info
-      label: Contact info
-      type: object
-      fields:
+      - name: contact_info
+        label: Contact info
+        type: object
+        fields:
         - { name: enable,    label: Enable,    type: boolean, default: true }
         - { name: title,     label: Title,     type: string }
         - { name: sub_title, label: Sub title, type: string }
