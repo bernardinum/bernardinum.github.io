@@ -83,7 +83,7 @@ content:
 
   # 4) about/index.html        
   - name: about
-    label: About page
+    label: O nas
     type: file
     path: about/index.html       
     format: yaml-frontmatter
@@ -93,7 +93,7 @@ content:
       label: Blockquote area
       type: object
       fields:
-        - { name: title,     label: Title,     type: string }
+        - { name: title, label: Title, type: string }
         - { name: sub_title, label: Sub title, type: string }
 
     # about_area
