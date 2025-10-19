@@ -210,9 +210,9 @@ content:
           type: object
           list: true
           fields:
-            - { name: title,    label: Title,      type: string  }
+            - { name: title,    label: Title,      type: string, hidden: true  }
             - { name: info_01,  label: Value,      type: string }
-            - { name: icon,     label: Icon class, type: string } 
+            - { name: icon,     label: Icon class, type: string, hidden: true } 
 
         # dodatkowe telefony
         - name: list_extra_phone
