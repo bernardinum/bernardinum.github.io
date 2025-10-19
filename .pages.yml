@@ -274,7 +274,7 @@ content:
           label: Image
           type: image
           options: { path: images/art, extensions: [jpg, webp] }
-        - { name: description, label: Description, type: rich-text }
+        - { name: description, label: Description, type: string }
 
       # PROCESS (Pismo Pielgrzym)
       - name: process_area
@@ -282,20 +282,20 @@ content:
         type: object
         fields:
         - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }
+        - { name: sub_title, label: Sub title, type: string }
         - name: image
           label: Image
           type: image
-          options: { path: images/art, extensions: [jpg, webp] }
+          options: { path: art, extensions: [jpg, webp] }
         - name: lists
           label: Bullet list
           type: object
           list: true
           fields:
             - { name: title,       label: Title,       type: string }
-            - { name: description, label: Description, type: rich-text }
+            - { name: description, label: Description, type: string }
 
-      # TESTIMONIALS / FEEDBACK (cytat)
+      # TESTIMONIALS 
       - name: testimonials
         label: Testimonials
         type: object
@@ -305,7 +305,7 @@ content:
           type: object
           list: true
           fields:
-            - { name: quote, label: Quote, type: rich-text }
+            - { name: quote, label: Quote, type: string }
 
       # VIDEO (Drukarnia)
       - name: video_area
@@ -323,22 +323,22 @@ content:
         - name: image
           label: Poster image
           type: image
-          options: { path: images/art, extensions: [jpg, webp] }
+          options: { path: art, extensions: [jpg, webp] }
         - name: lists
           label: Bullet list
           type: object
           list: true
           fields:
             - { name: title,       label: Title,       type: string }
-            - { name: description, label: Description, type: rich-text }
+            - { name: description, label: Description, type: string }
 
-      # TEAMS / AUTHORS KARUZELA
+      # AUTHORS KARUZELA
       - name: teams_carousel
-        label: Teams carousel
+        label: Autorzy
         type: object
         fields:
         - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }
+        - { name: sub_title, label: Sub title, type: string }
 
 
 
