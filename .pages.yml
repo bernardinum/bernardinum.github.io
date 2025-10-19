@@ -184,19 +184,17 @@ content:
             message: 'Podaj pełny URL (http(s)://...)'
 
      # 5) contact/index.html
-    - name: contact
-      label: Contact page
-      type: file
-      path: contact/index.html     
-      format: yaml-frontmatter
-      fields:
+  - name: contact
+    label: Contact page
+    type: file
+    path: contact/index.html 
+    format: yaml-frontmatter
+    fields:
       - name: contact_info
         label: Contact info
         type: object
         fields:
-        - { name: enable,    label: Enable,    type: boolean, default: true }
         - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: string }
         - name: contact_data
           label: Contact data
           type: object
@@ -213,10 +211,10 @@ content:
             - { name: info,  label: Info (text or HTML), type: text }
 
     # contact_form
-    - name: contact_form
-      label: Contact form
-      type: object
-      fields:
+      - name: contact_form
+        label: Contact form
+        type: object
+        fields:
         - { name: enable,    label: Enable,    type: boolean, default: true }
         - { name: title,     label: Title,     type: string }
         - { name: sub_title, label: Sub title, type: rich-text }  # obsłuży <br> i formatowanie
@@ -260,27 +258,5 @@ content:
                 regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
                 message: Podaj poprawny adres e-mail
 
-        # pola formularza (Imię, Nazwisko, Email, Telefon, Wiadomość)
-        - name: forms_data
-          label: Form fields
-          type: object
-          list: true
-          fields:
-            - name: field_type
-              label: Field type
-              type: select
-              options:
-                - { label: Input,   value: input }
-                - { label: Textarea, value: textarea }
-            - { name: field_name,    label: Field name (key), type: string }
-            - { name: placeholder,   label: Placeholder,      type: string }
-            - { name: error_message, label: Error message,    type: string }
-
-    # google_maps
-    - name: google_maps
-      label: Google Maps
-      type: object
-      fields:
-        - { name: enable, label: Enable, type: boolean, default: true }
 
 
