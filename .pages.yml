@@ -191,6 +191,7 @@ content:
     format: yaml-frontmatter
     fields:
       - name: contact_info
+        hidden: true
         label: Contact info
         type: object
         fields:
