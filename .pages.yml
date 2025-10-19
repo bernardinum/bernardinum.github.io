@@ -66,50 +66,7 @@ content:
         list: true
         component: teamMember
 
-  # 3) index.html (strona główna)
-  - name: home
-    label: Strona główna
-    type: file
-    path: index.html
-    # domyślnie: yaml-frontmatter
-    fields:
-      - { name: layout, label: Layout, type: string, hidden: true }
-      - { name: title, label: Title, type: string }
-      - { name: description, label: Meta description, type: text }
-      - { name: cover, label: Social/OG image, type: image }
-      - name: hero
-        label: Hero
-        component: hero
-      - { name: body, label: Page content, type: rich-text }
-
-  # 4) about/index.html
-  - name: about
-    label: O nas
-    type: file
-    path: about/index.html
-    fields:
-      - { name: blockquote_area, label: Blockquote, type: text,}
-      - { name: title, label: Title, type: string }
-      - { name: description, label: Meta description, type: text }
-      - { name: body, label: Page content, type: rich-text }
-
-  # 5) contact/index.html
-  - name: contact
-    label: Kontakt
-    type: file
-    path: contact/index.html
-    fields:
-      - { name: layout, label: Layout, type: string, hidden: true }
-      - { name: title, label: Title, type: string }
-      - { name: description, label: Meta description, type: text }
-      - { name: email, label: Email, type: string, pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$' }
-      - { name: phone, label: Phone, type: string }
-      - { name: address, label: Address, type: text }
-      - { name: map_embed, label: Map embed (iframe), type: text }
-      - { name: cover, label: Social/OG image, type: image }
-      - { name: body, label: Page content, type: rich-text }
-
-  # 6) privacy/privacy.html
+  # 3) privacy/privacy.html
   - name: privacy
     label: Polityka prywatności
     type: file
@@ -123,3 +80,106 @@ content:
       fields:
         - { name: title, label: Podtytuł, type: string }
         - { name: description, label: Opis (edytor), type: rich-text }
+
+  # 4) about/index.html        
+  - name: about
+    label: About page
+    type: file
+    path: about/index.html       
+    format: yaml-frontmatter
+    fields:
+    # blockquote_area
+    - name: blockquote_area
+      label: Blockquote area
+      type: object
+      fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: string }
+
+    # about_area
+    - name: about_area
+      label: About area
+      type: object
+      fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: rich-text }   # WYMAGANY rich-text
+
+    # video_area
+    - name: video_area
+      label: Video area
+      type: object
+      fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: string }
+        - name: video_url
+          label: Video URL
+          type: string
+          pattern:
+            # prosta walidacja URL (http/https); możesz zaostrzyć wg potrzeb
+            regex: '^https?:\/\/[^\s"]+$'
+            message: 'Podaj pełny URL (http(s)://...)'
+
+    # faksymile_area
+    - name: faksymile_area
+      label: Faksymile area
+      type: object
+      fields:
+        - { name: title, label: Title, type: string }
+        - name: services
+          label: Services
+          type: object
+          list: true
+          fields:
+            - { name: title,       label: Title,       type: string }
+            - { name: description, label: Description, type: rich-text }   # WYMAGANY rich-text
+            - name: image
+              label: Image
+              type: image
+              options:
+                # Ścieżka w przeglądarce mediów MUSI być w obrębie media.input;
+                # przy media: { input: assets, output: /assets } używaj relatywnie:
+                path: images/art
+                extensions: [jpg, webp]   # tylko .jpg i .webp
+
+    # two_columns_area_one
+    - name: two_columns_area_one
+      label: Two columns (1)
+      type: object
+      fields:
+        - { name: title,       label: Title,       type: string }
+        - name: image
+          label: Image
+          type: image
+          options:
+            path: images/art
+            extensions: [jpg, webp]
+        - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
+        - { name: button_text, label: Button text, type: string }
+        - name: button_url
+          label: Button URL
+          type: string
+          pattern:
+            regex: '^https?:\/\/[^\s"]+$'
+            message: 'Podaj pełny URL (http(s)://...)'
+
+    # two_columns_area_two
+    - name: two_columns_area_two
+      label: Two columns (2)
+      type: object
+      fields:
+        - { name: title,       label: Title,       type: string }
+        - name: image
+          label: Image
+          type: image
+          options:
+            path: images/art
+            extensions: [jpg, webp]
+        - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
+        - { name: button_text, label: Button text, type: string }
+        - name: button_url
+          label: Button URL
+          type: string
+          pattern:
+            regex: '^https?:\/\/[^\s"]+$'
+            message: 'Podaj pełny URL (http(s)://...)'
+
