@@ -205,7 +205,7 @@ content:
               type: image
               hidden: true
               options:
-                path: images/icons
+                path: icons
                 extensions: [png, webp, svg, ico]
             - { name: info,  label: Info (text or HTML), type: text }
 
