@@ -235,7 +235,7 @@ content:
 
         # dodatkowe telefony
         - name: list_extra_phone
-          label: Extra phones
+          label: Departamenty Telefony
           type: object
           list: true
           fields:
@@ -244,7 +244,7 @@ content:
 
         # dodatkowe e-maile
         - name: list_extra_email
-          label: Extra emails
+          label: Departamenty E-maile
           type: object
           list: true
           fields:
