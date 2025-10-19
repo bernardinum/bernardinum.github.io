@@ -231,7 +231,7 @@ content:
           fields:
             - { name: title,    label: Title,      type: string }
             - { name: info_01,  label: Value,      type: string }
-            - { name: icon,     label: Icon class, type: string } # np. icofont-...
+            - { name: icon,     label: Icon class, type: string, hidden: true } 
 
         # dodatkowe telefony
         - name: list_extra_phone
