@@ -28,7 +28,7 @@ components:
     fields:
       - { name: name, label: Imię i Nazwisko, type: string, required: true }
       - { name: image, label: Zdjęcie, type: image, required: true, description: "Wielkość 400x400px, czarno-białe" }
-      - { name: description, label: Bio (skrót) , type: text, required: true }
+      - { name: description, label: Bio (skrót), type: text, required: true }
 
   hero:
     label: Hero section
@@ -40,7 +40,7 @@ components:
       - { name: cta_text, label: CTA text, type: string }
       - { name: cta_url, label: CTA URL, type: string }
 
-# Zawartość udostępniona w CMS
+# Zawartość udostępniona w CMS (kolejność wg Twojej prośby)
 content:
   # 1) _data/navigation.yml
   - name: navigation
@@ -66,277 +66,273 @@ content:
         list: true
         component: teamMember
 
-  # 3) privacy/index.html
-  - name: privacy
-    label: Polityka prywatności
-    type: file
-    path: privacy/privacy.html
-    format: yaml-frontmatter
-    fields:
-    - { name: title, label: Tytuł, type: string }
-    - name: privacy_info
-      label: Polityka prywatności
-      type: object
-      fields:
-        - { name: title, label: Podtytuł, type: string }
-        - { name: description, label: Opis (edytor), type: rich-text }
-
-  # 4) Strona O nas - about/index.html        
-  - name: about
-    label: O nas
-    type: file
-    path: about/index.html       
-    format: yaml-frontmatter
-    fields:
-    # blockquote_area
-    - name: blockquote_area
-      label: Blockquote area
-      type: object
-      fields:
-        - { name: title, label: Title, type: string }
-        - { name: sub_title, label: Sub title, type: string }
-
-    # about_area
-    - name: about_area
-      label: About area
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }   # WYMAGANY rich-text
-
-    # video_area
-    - name: video_area
-      label: Video area
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: string }
-        - name: video_url
-          label: Video URL
-          type: string
-          pattern:
-            # walidacja URL (http/https)
-            regex: '^https?:\/\/[^\s"]+$'
-            message: 'Podaj pełny URL (http(s)://...)'
-
-    # faksymile_area
-    - name: faksymile_area
-      label: Faksymile area
-      type: object
-      fields:
-        - { name: title, label: Title, type: string }
-        - name: services
-          label: Services
-          type: object
-          list: true
-          fields:
-            - { name: title,       label: Title,       type: string }
-            - { name: description, label: Description, type: rich-text }   # WYMAGANY rich-text
-            - name: image
-              label: Image
-              type: image
-              options:
-                # Ścieżka w przeglądarce mediów MUSI być w obrębie media.input;
-                # przy media: { input: assets, output: /assets } używaj relatywnie:
-                path: art
-                extensions: [jpg, webp]   # tylko .jpg i .webp
-
-    # two_columns_area_one
-    - name: two_columns_area_one
-      label: Two columns (1)
-      type: object
-      fields:
-        - { name: title,       label: Title,       type: string }
-        - name: image
-          label: Image
-          type: image
-          options:
-            path: art
-            extensions: [jpg, webp]
-        - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
-        - { name: button_text, label: Button text, type: string }
-        - name: button_url
-          label: Button URL
-          type: string
-          pattern:
-            regex: '^https?:\/\/[^\s"]+$'
-            message: 'Podaj pełny URL (http(s)://...)'
-
-    # two_columns_area_two
-    - name: two_columns_area_two
-      label: Two columns (2)
-      type: object
-      fields:
-        - { name: title,       label: Title,       type: string }
-        - name: image
-          label: Image
-          type: image
-          options:
-            path: art
-            extensions: [jpg, webp]
-        - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
-        - { name: button_text, label: Button text, type: string }
-        - name: button_url
-          label: Button URL
-          type: string
-          pattern:
-            regex: '^https?:\/\/[^\s"]+$'
-            message: 'Podaj pełny URL (http(s)://...)'
-
-  # 5) Strona Kontakt - contact/index.html
-  - name: contact
-    label: Kontakt
-    type: file
-    path: contact/index.html 
-    format: yaml-frontmatter
-    fields:
-    # contact_form
-      - name: contact_form
-        label: Contact form
-        type: object
-        fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }  # obsłuży <br> i formatowanie
-        - name: action_email
-          label: Form target email
-          type: string
-          pattern:
-            regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-            message: Podaj poprawny adres e-mail
-            
-        # "lists" (4 kafelki: Nazwa/Adres/E-mail/Phone)
-        - name: lists
-          label: Info tiles
-          type: object
-          list: true
-          fields:
-            - { name: title,    label: Title,      type: string, hidden: true  }
-            - { name: info_01,  label: Value,      type: string }
-            - { name: icon,     label: Icon class, type: string, hidden: true } 
-
-        # dodatkowe telefony
-        - name: list_extra_phone
-          label: Departamenty Telefony
-          type: object
-          list: true
-          fields:
-            - { name: title,   label: Label, type: string }
-            - { name: info_01, label: Phone, type: string }
-
-        # dodatkowe e-maile
-        - name: list_extra_email
-          label: Departamenty E-maile
-          type: object
-          list: true
-          fields:
-            - { name: title,   label: Label, type: string  }
-            - name: info_01
-              label: Email
-              type: string
-              pattern:
-                regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-                message: Podaj poprawny adres e-mail
-
-
-  # 6) Strona Główna - index.html
+  # 3) Strona Główna - index.html
   - name: home
     label: Strona główna
     type: file
     path: index.html
     format: yaml-frontmatter
     fields:
-    # HERO
-    - name: hero_area
-      label: Hero area
-      type: object
-      fields:
-        - { name: enable,     label: Enable,     type: boolean, default: true, hidden: true }
-        - { name: title,      label: Title,      type: string }
-        - { name: sub_title,  label: Sub title,  type: rich-text }
-        - name: slider_image
-          label: Slider image
-          type: image
-          options: { path: images/art, extensions: [jpg, webp] }
+      # HERO
+      - name: hero_area
+        label: Hero area
+        type: object
+        fields:
+          - { name: enable,     label: Enable,     type: boolean, default: true, hidden: true }
+          - { name: title,      label: Title,      type: string }
+          - { name: sub_title,  label: Sub title,  type: rich-text }
+          - name: slider_image
+            label: Slider image
+            type: image
+            options: { path: art, extensions: [jpg, webp] }
 
-    # SERVICES (Tradycja)
-    - name: services_area
-      label: Services area
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }
-        - name: services
-          label: Services
-          type: object
-          list: true
-          fields:
-            - { name: title,       label: Title,       type: string }
-            - name: image
-              label: Image
-              type: image
-              options: { path: images/art, extensions: [jpg, webp] }
-            - { name: description, label: Description, type: rich-text }
+      # SERVICES (Tradycja)
+      - name: services_area
+        label: Services area
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: rich-text }
+          - name: services
+            label: Services
+            type: object
+            list: true
+            fields:
+              - { name: title,       label: Title,       type: string }
+              - name: image
+                label: Image
+                type: image
+                options: { path: art, extensions: [jpg, webp] }
+              - { name: description, label: Description, type: rich-text }
 
-    # PROCESS (Pismo Pielgrzym)
-    - name: process_area
-      label: Process area
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }
-        - name: image
-          label: Image
-          type: image
-          options: { path: images/art, extensions: [jpg, webp] }
-        - name: lists
-          label: Bullet list
-          type: object
-          list: true
-          fields:
-            - { name: title,       label: Title,       type: string }
-            - { name: description, label: Description, type: rich-text }
+      # PROCESS (Pismo Pielgrzym)
+      - name: process_area
+        label: Process area
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: rich-text }
+          - name: image
+            label: Image
+            type: image
+            options: { path: art, extensions: [jpg, webp] }
+          - name: lists
+            label: Bullet list
+            type: object
+            list: true
+            fields:
+              - { name: title,       label: Title,       type: string }
+              - { name: description, label: Description, type: rich-text }
 
-    # TESTIMONIALS
-    - name: testimonials
-      label: Testimonials
-      type: object
-      fields:
-        - name: feedback
-          label: Feedback items
-          type: object
-          list: true
-          fields:
-            - { name: quote, label: Quote, type: rich-text }
+      # TESTIMONIALS
+      - name: testimonials
+        label: Testimonials
+        type: object
+        fields:
+          - name: feedback
+            label: Feedback items
+            type: object
+            list: true
+            fields:
+              - { name: quote, label: Quote, type: rich-text }
 
-    # VIDEO (Drukarnia)
-    - name: video_area
-      label: Video area
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: string }
-        - name: video_url
-          label: Video URL
-          type: string
-          pattern:
-            regex: '^https?:\/\/[^\s"]+$'
-            message: 'Podaj pełny URL (http(s)://...)'
-        - name: image
-          label: Poster image
-          type: image
-          options: { path: images/art, extensions: [jpg, webp] }
-        - name: lists
-          label: Bullet list
-          type: object
-          list: true
-          fields:
-            - { name: title,       label: Title,       type: string }
-            - { name: description, label: Description, type: rich-text }
+      # VIDEO (Drukarnia)
+      - name: video_area
+        label: Video area
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: string }
+          - name: video_url
+            label: Video URL
+            type: string
+            pattern:
+              regex: '^https?:\/\/[^\s"]+$'
+              message: 'Podaj pełny URL (http(s)://...)'
+          - name: image
+            label: Poster image
+            type: image
+            options: { path: art, extensions: [jpg, webp] }
+          - name: lists
+            label: Bullet list
+            type: object
+            list: true
+            fields:
+              - { name: title,       label: Title,       type: string }
+              - { name: description, label: Description, type: rich-text }
 
-    # AUTHORS KARUZELA
-    - name: teams_carousel
-      label: Autorzy
-      type: object
-      fields:
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }
+      # AUTHORS KARUZELA
+      - name: teams_carousel
+        label: Autorzy
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: rich-text }
+
+  # 4) Strona O nas - about/index.html
+  - name: about
+    label: O nas
+    type: file
+    path: about/index.html
+    format: yaml-frontmatter
+    fields:
+      # blockquote_area
+      - name: blockquote_area
+        label: Blockquote area
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: sub_title, label: Sub title, type: string }
+
+      # about_area
+      - name: about_area
+        label: About area
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: rich-text }   # rich-text
+
+      # video_area
+      - name: video_area
+        label: Video area
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: string }
+          - name: video_url
+            label: Video URL
+            type: string
+            pattern:
+              regex: '^https?:\/\/[^\s"]+$'
+              message: 'Podaj pełny URL (http(s)://...)'
+
+      # faksymile_area
+      - name: faksymile_area
+        label: Faksymile area
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - name: services
+            label: Services
+            type: object
+            list: true
+            fields:
+              - { name: title,       label: Title,       type: string }
+              - { name: description, label: Description, type: rich-text }   # rich-text
+              - name: image
+                label: Image
+                type: image
+                options:
+                  path: art
+                  extensions: [jpg, webp]   # tylko .jpg i .webp
+
+      # two_columns_area_one
+      - name: two_columns_area_one
+        label: Two columns (1)
+        type: object
+        fields:
+          - { name: title,       label: Title,       type: string }
+          - name: image
+            label: Image
+            type: image
+            options:
+              path: art
+              extensions: [jpg, webp]
+          - { name: description, label: Description, type: rich-text } # rich-text
+          - { name: button_text, label: Button text, type: string }
+          - name: button_url
+            label: Button URL
+            type: string
+            pattern:
+              regex: '^https?:\/\/[^\s"]+$'
+              message: 'Podaj pełny URL (http(s)://...)'
+
+      # two_columns_area_two
+      - name: two_columns_area_two
+        label: Two columns (2)
+        type: object
+        fields:
+          - { name: title,       label: Title,       type: string }
+          - name: image
+            label: Image
+            type: image
+            options:
+              path: art
+              extensions: [jpg, webp]
+          - { name: description, label: Description, type: rich-text } # rich-text
+          - { name: button_text, label: Button text, type: string }
+          - name: button_url
+            label: Button URL
+            type: string
+            pattern:
+              regex: '^https?:\/\/[^\s"]+$'
+              message: 'Podaj pełny URL (http(s)://...)'
+
+  # 5) Strona Kontakt - contact/index.html
+  - name: contact
+    label: Kontakt
+    type: file
+    path: contact/index.html
+    format: yaml-frontmatter
+    fields:
+      # contact_form
+      - name: contact_form
+        label: Contact form
+        type: object
+        fields:
+          - { name: title,     label: Title,     type: string }
+          - { name: sub_title, label: Sub title, type: rich-text }  # WYSIWYG
+          - name: action_email
+            label: Form target email
+            type: string
+            pattern:
+              regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+              message: Podaj poprawny adres e-mail
+
+          # "lists" (4 kafelki: Nazwa/Adres/E-mail/Phone)
+          - name: lists
+            label: Info tiles
+            type: object
+            list: true
+            fields:
+              - { name: title,    label: Title,      type: string, hidden: true }
+              - { name: info_01,  label: Value,      type: string }
+              - { name: icon,     label: Icon class, type: string, hidden: true }
+
+          # dodatkowe telefony
+          - name: list_extra_phone
+            label: Departamenty Telefony
+            type: object
+            list: true
+            fields:
+              - { name: title,   label: Label, type: string }
+              - { name: info_01, label: Phone, type: string }
+
+          # dodatkowe e-maile
+          - name: list_extra_email
+            label: Departamenty E-maile
+            type: object
+            list: true
+            fields:
+              - { name: title,   label: Label, type: string }
+              - name: info_01
+                label: Email
+                type: string
+                pattern:
+                  regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                  message: Podaj poprawny adres e-mail
+
+  # 6) Polityka prywatności - privacy/privacy.html
+  - name: privacy
+    label: Polityka prywatności
+    type: file
+    path: privacy/privacy.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Tytuł, type: string }
+      - name: privacy_info
+        label: Polityka prywatności
+        type: object
+        fields:
+          - { name: title, label: Podtytuł, type: string }
+          - { name: description, label: Opis (edytor), type: rich-text }
