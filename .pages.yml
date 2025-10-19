@@ -81,7 +81,7 @@ content:
         - { name: title, label: Podtytuł, type: string }
         - { name: description, label: Opis (edytor), type: rich-text }
 
-  # 4) about/index.html        
+  # 4) Strona O nas - about/index.html        
   - name: about
     label: O nas
     type: file
@@ -183,7 +183,7 @@ content:
             regex: '^https?:\/\/[^\s"]+$'
             message: 'Podaj pełny URL (http(s)://...)'
 
-  # 5) contact/index.html
+  # 5) Strona Kontakt - contact/index.html
   - name: contact
     label: Kontakt
     type: file
@@ -236,6 +236,110 @@ content:
               pattern:
                 regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
                 message: Podaj poprawny adres e-mail
+
+  # 6) Strona Główna - index.html
+  - name: home
+    label: Strona główna
+    type: file
+    path: index.html
+    format: yaml-frontmatter
+    fields:
+    # HERO
+    - name: hero_area
+      label: Hero area
+      type: object
+      fields:
+      - { name: enable,     label: Enable,     type: boolean, default: true }
+      - { name: title,      label: Title,      type: string }
+      - { name: sub_title,  label: Sub title,  type: rich-text }
+      - name: slider_image
+      label: Slider image
+      type: image
+      options: { path: art, extensions: [jpg, webp] }
+
+    # SERVICES (Tradycja)
+    - name: services_area
+      label: Services area
+      type: object
+      fields:
+      - { name: title,     label: Title,     type: string }
+      - { name: sub_title, label: Sub title, type: rich-text }
+      - name: services
+        label: Services
+        type: object
+        list: true
+        fields:
+        - { name: title,       label: Title,       type: string }
+        - name: image
+          label: Image
+          type: image
+          options: { path: images/art, extensions: [jpg, webp] }
+        - { name: description, label: Description, type: rich-text }
+
+      # PROCESS (Pismo Pielgrzym)
+      - name: process_area
+        label: Process area
+        type: object
+        fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: rich-text }
+        - name: image
+          label: Image
+          type: image
+          options: { path: images/art, extensions: [jpg, webp] }
+        - name: lists
+          label: Bullet list
+          type: object
+          list: true
+          fields:
+            - { name: title,       label: Title,       type: string }
+            - { name: description, label: Description, type: rich-text }
+
+      # TESTIMONIALS / FEEDBACK (cytat)
+      - name: testimonials
+        label: Testimonials
+        type: object
+        fields:
+        - name: feedback
+          label: Feedback items
+          type: object
+          list: true
+          fields:
+            - { name: quote, label: Quote, type: rich-text }
+
+      # VIDEO (Drukarnia)
+      - name: video_area
+        label: Video area
+        type: object
+        fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: string }
+        - name: video_url
+          label: Video URL
+          type: string
+          pattern:
+            regex: '^https?:\/\/[^\s"]+$'
+            message: 'Podaj pełny URL (http(s)://...)'
+        - name: image
+          label: Poster image
+          type: image
+          options: { path: images/art, extensions: [jpg, webp] }
+        - name: lists
+          label: Bullet list
+          type: object
+          list: true
+          fields:
+            - { name: title,       label: Title,       type: string }
+            - { name: description, label: Description, type: rich-text }
+
+      # TEAMS / AUTHORS KARUZELA
+      - name: teams_carousel
+        label: Teams carousel
+        type: object
+        fields:
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: rich-text }
+
 
 
 
