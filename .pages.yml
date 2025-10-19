@@ -214,7 +214,6 @@ content:
         label: Contact form
         type: object
         fields:
-        - { name: enable,    label: Enable,    type: boolean, default: true }
         - { name: title,     label: Title,     type: string }
         - { name: sub_title, label: Sub title, type: rich-text }  # obsłuży <br> i formatowanie
         - name: action_email
