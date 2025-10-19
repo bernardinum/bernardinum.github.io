@@ -339,7 +339,3 @@ content:
         fields:
         - { name: title,     label: Title,     type: string }
         - { name: sub_title, label: Sub title, type: string }
-
-
-
-
