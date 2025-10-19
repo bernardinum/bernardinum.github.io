@@ -203,7 +203,6 @@ content:
             - name: icon
               label: Icon image
               type: image
-              hidden: true
               options:
                 path: images/icons
                 extensions: [png, webp, svg]
