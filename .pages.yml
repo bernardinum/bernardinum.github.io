@@ -206,13 +206,13 @@ content:
           label: Icon image
           type: image
           options:
-            path: images/icons
-            extensions: [png, webp, svg]
+            path: icons
+            extensions: [png, webp, svg, ico]
         - { name: label, label: Label, type: string }   # (opcjonalnie: dawny 'title' dla wpisu)
         - name: info
           label: Info (one or many lines)
           type: string
-          list: true      # ← kluczowe: teraz to tablica stringów
+
 
     # contact_form
       - name: contact_form
