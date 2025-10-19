@@ -248,7 +248,7 @@ content:
           type: object
           list: true
           fields:
-            - { name: title,   label: Label, type: string }
+            - { name: title,   label: Label, type: string, hidden: true  }
             - name: info_01
               label: Email
               type: string
