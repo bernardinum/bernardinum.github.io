@@ -183,9 +183,9 @@ content:
             regex: '^https?:\/\/[^\s"]+$'
             message: 'Podaj pełny URL (http(s)://...)'
 
-     # 5) contact/index.html
+  # 5) contact/index.html
   - name: contact
-    label: Contact page
+    label: Kontakt
     type: file
     path: contact/index.html 
     format: yaml-frontmatter
