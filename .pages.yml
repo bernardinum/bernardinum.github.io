@@ -115,7 +115,7 @@ content:
           label: Video URL
           type: string
           pattern:
-            # prosta walidacja URL (http/https); możesz zaostrzyć wg potrzeb
+            # walidacja URL (http/https)
             regex: '^https?:\/\/[^\s"]+$'
             message: 'Podaj pełny URL (http(s)://...)'
 
@@ -138,7 +138,7 @@ content:
               options:
                 # Ścieżka w przeglądarce mediów MUSI być w obrębie media.input;
                 # przy media: { input: assets, output: /assets } używaj relatywnie:
-                path: images/art
+                path: art
                 extensions: [jpg, webp]   # tylko .jpg i .webp
 
     # two_columns_area_one
@@ -151,7 +151,7 @@ content:
           label: Image
           type: image
           options:
-            path: images/art
+            path: art
             extensions: [jpg, webp]
         - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
         - { name: button_text, label: Button text, type: string }
@@ -172,7 +172,7 @@ content:
           label: Image
           type: image
           options:
-            path: images/art
+            path: art
             extensions: [jpg, webp]
         - { name: description, label: Description, type: rich-text } # WYMAGANY rich-text
         - { name: button_text, label: Button text, type: string }
