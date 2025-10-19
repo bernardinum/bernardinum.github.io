@@ -66,7 +66,7 @@ content:
         list: true
         component: teamMember
 
-  # 3) privacy/privacy.html
+  # 3) privacy/index.html
   - name: privacy
     label: Polityka prywatności
     type: file
@@ -182,4 +182,123 @@ content:
           pattern:
             regex: '^https?:\/\/[^\s"]+$'
             message: 'Podaj pełny URL (http(s)://...)'
+
+     # 5) contact/index.html
+    - name: contact
+      label: Contact page
+      type: file
+      path: contact/index.html     
+      format: yaml-frontmatter
+      fields:
+    - { name: title,           label: Title,            type: string }
+    - { name: permalink,       label: Permalink,        type: string }
+    - { name: layout,          label: Layout,           type: string, hidden: true }
+    - { name: meta_title,      label: Meta title,       type: string }
+    - { name: meta_description,label: Meta description, type: text }
+    - { name: sub_title,       label: Sub title,        type: string }
+    - name: header_image
+      label: Header image
+      type: image
+      options:
+        # jeśli w .pages.yml masz:
+        # media: { input: assets, output: /assets }
+        # to poniższa ścieżka umieszcza pliki w /assets/images/headers/ (opcjonalnie zmień)
+        path: images/headers
+        extensions: [jpg, jpeg, png, webp]
+    - { name: schema_type,     label: Schema type,      type: string }
+
+    # contact_info
+    - name: contact_info
+      label: Contact info
+      type: object
+      fields:
+        - { name: enable,    label: Enable,    type: boolean, default: true }
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: string }
+        - name: contact_data
+          label: Contact data
+          type: object
+          list: true
+          fields:
+            - name: icon
+              label: Icon image
+              type: image
+              options:
+                path: images/icons
+                extensions: [png, webp, svg]
+            # 'info' miewa w pliku jeden string lub listę (np. e-maile).
+            # Zostawiamy jako 'text', żeby nie wymuszać zmiany struktury.
+            - { name: info,  label: Info (text or HTML), type: text }
+
+    # contact_form
+    - name: contact_form
+      label: Contact form
+      type: object
+      fields:
+        - { name: enable,    label: Enable,    type: boolean, default: true }
+        - { name: title,     label: Title,     type: string }
+        - { name: sub_title, label: Sub title, type: rich-text }  # obsłuży <br> i formatowanie
+        - name: action_email
+          label: Form target email
+          type: string
+          pattern:
+            regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+            message: Podaj poprawny adres e-mail
+
+        # "lists" (4 kafelki: Nazwa/Adres/E-mail/Phone)
+        - name: lists
+          label: Info tiles
+          type: object
+          list: true
+          fields:
+            - { name: title,    label: Title,      type: string }
+            - { name: info_01,  label: Value,      type: string }
+            - { name: icon,     label: Icon class, type: string } # np. icofont-...
+
+        # dodatkowe telefony
+        - name: list_extra_phone
+          label: Extra phones
+          type: object
+          list: true
+          fields:
+            - { name: title,   label: Label, type: string }
+            - { name: info_01, label: Phone, type: string }
+
+        # dodatkowe e-maile
+        - name: list_extra_email
+          label: Extra emails
+          type: object
+          list: true
+          fields:
+            - { name: title,   label: Label, type: string }
+            - name: info_01
+              label: Email
+              type: string
+              pattern:
+                regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                message: Podaj poprawny adres e-mail
+
+        # pola formularza (Imię, Nazwisko, Email, Telefon, Wiadomość)
+        - name: forms_data
+          label: Form fields
+          type: object
+          list: true
+          fields:
+            - name: field_type
+              label: Field type
+              type: select
+              options:
+                - { label: Input,   value: input }
+                - { label: Textarea, value: textarea }
+            - { name: field_name,    label: Field name (key), type: string }
+            - { name: placeholder,   label: Placeholder,      type: string }
+            - { name: error_message, label: Error message,    type: string }
+
+    # google_maps
+    - name: google_maps
+      label: Google Maps
+      type: object
+      fields:
+        - { name: enable, label: Enable, type: boolean, default: true }
+
 
