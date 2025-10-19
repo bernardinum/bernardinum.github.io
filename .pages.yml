@@ -207,24 +207,7 @@ content:
               options:
                 path: images/icons
                 extensions: [png, webp, svg]
-            # 'info' miewa w pliku jeden string lub listę (np. e-maile).
-            # Zostawiamy jako 'text', żeby nie wymuszać zmiany struktury.
             - { name: info,  label: Info (text or HTML), type: text }
-
-    # contact_form
-      - name: contact_form
-        label: Contact form
-        type: object
-        fields:
-        - { name: enable,    label: Enable,    type: boolean, default: true }
-        - { name: title,     label: Title,     type: string }
-        - { name: sub_title, label: Sub title, type: rich-text }  # obsłuży <br> i formatowanie
-        - name: action_email
-          label: Form target email
-          type: string
-          pattern:
-            regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-            message: Podaj poprawny adres e-mail
 
         # "lists" (4 kafelki: Nazwa/Adres/E-mail/Phone)
         - name: lists
