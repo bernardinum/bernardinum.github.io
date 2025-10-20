@@ -85,6 +85,7 @@ content:
             label: Slider image
             type: image
             options: { path: art, extensions: [jpg, webp] }
+            description: "Wielkość 1600x1100px, format pliku PNG lub Webp, bez tła"
 
       # SERVICES (Tradycja)
       - name: services_area
