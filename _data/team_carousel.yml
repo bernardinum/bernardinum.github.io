@@ -1,33 +1,25 @@
 members:
-  - name: "Karol Olgierd Borchardt"
-    designation: ""
-    description: "Kapitan żeglugi wielkiej, marynista."
-    image: "/assets/images/authors/bernardinum-autorzy-karol-olgierd-borchardt.webp"
-  - name: "Wojciech Cejrowski"
-    designation: ""
-    description: "Współczesny podróżnik, pisarz."
-    image: "/assets/images/authors/bernardinum-autorzy-wojciech-cejrowski.webp"
-  - name: "Elżbieta Dzikowska"
-    designation: ""
-    description: "Podróżniczka, pisarka i historyczka sztuki."
-    image: "/assets/images/authors/bernardinum-autorzy-elzbieta-dzikowska.webp"
-  - name: "Tony Halik"
-    designation: ""
-    description: "Podróżnik, dokumentalista, dziennikarz i filmowiec."
-    image: "/assets/images/authors/bernardinum-autorzy-tony-halik.webp"
-  - name: "Arkady Fiedler"
-    designation: ""
-    description: "Pisarz, podróżnik i przyrodnik."
-    image: "/assets/images/authors/bernardinum-autorzy-arkady-fiedler.webp"
-  - name: "Romuald Koperski"
-    designation: ""
-    description: "Podróżnik, pisarz i eksplorator Syberii."
-    image: "/assets/images/authors/bernardinum-autorzy-romuald-koperski.webp"
-  - name: "Ks. Janusz Pasierb"
-    designation: ""
-    description: "Kapłan, poeta, historyk sztuki."
-    image: "/assets/images/authors/bernardinum-autorzy-ks-janusz-pasierb.webp"
-  - name: "Ks. Jan Twardowski"
-    designation: ""
-    description: "Poeta religijny, kapłan i autor tomików poezji."
-    image: "/assets/images/authors/bernardinum-autorzy-ks-jan-twardowski.webp"
+  - name: Karol Olgierd Borchardt
+    image: /assets/images/authors/bernardinum-autorzy-karol-olgierd-borchardt.webp
+    description: Kapitan żeglugi wielkiej, marynista.
+  - name: Wojciech Cejrowski
+    image: /assets/images/authors/bernardinum-autorzy-wojciech-cejrowski.webp
+    description: Współczesny podróżnik, pisarz.
+  - name: Elżbieta Dzikowska
+    image: /assets/images/authors/bernardinum-autorzy-elzbieta-dzikowska.webp
+    description: Podróżniczka, pisarka i historyczka sztuki.
+  - name: Tony Halik
+    image: /assets/images/authors/bernardinum-autorzy-tony-halik.webp
+    description: Podróżnik, dokumentalista, dziennikarz i filmowiec.
+  - name: Arkady Fiedler
+    image: /assets/images/authors/bernardinum-autorzy-arkady-fiedler.webp
+    description: Pisarz, podróżnik i przyrodnik.
+  - name: Romuald Koperski
+    image: /assets/images/authors/bernardinum-autorzy-romuald-koperski.webp
+    description: Podróżnik, pisarz i eksplorator Syberii.
+  - name: Ks. Janusz Pasierb
+    image: /assets/images/authors/bernardinum-autorzy-ks-janusz-pasierb.webp
+    description: Kapłan, poeta, historyk sztuki.
+  - name: Ks. Jan Twardowski
+    image: /assets/images/authors/bernardinum-autorzy-ks-jan-twardowski.webp
+    description: Kaznodzieja, poeta, autor rozważań.
