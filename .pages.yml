@@ -5,7 +5,7 @@
 settings:
   hide: false
   content:
-    merge: true   # nie nadpisuj nieedytowanych fragmentów plików
+    merge: true 
 
 # Gdzie trzymamy media (obrazy, pliki…)
 media:
@@ -40,7 +40,7 @@ components:
       - { name: cta_text, label: CTA text, type: string }
       - { name: cta_url, label: CTA URL, type: string }
 
-# Zawartość udostępniona w CMS (kolejność wg Twojej prośby)
+# Zawartość udostępniona w CMS 
 content:
   # 1) _data/navigation.yml
   - name: navigation
@@ -104,6 +104,7 @@ content:
                 label: Image
                 type: image
                 options: { path: art, extensions: [jpg, webp] }
+                description: "Wielkość 970x786px, format pliku JPG, PNG lub Webp"
               - { name: description, label: Description, type: rich-text }
 
       # PROCESS (Pismo Pielgrzym)
@@ -117,6 +118,7 @@ content:
             label: Image
             type: image
             options: { path: art, extensions: [jpg, webp] }
+            description: "1500x1250px, format pliku PNG lub Webp, bez tła"
           - name: lists
             label: Bullet list
             type: object
@@ -154,6 +156,7 @@ content:
             label: Poster image
             type: image
             options: { path: art, extensions: [jpg, webp] }
+            description: "970x786px, format pliku JPG, PNG lub Webp"
           - name: lists
             label: Bullet list
             type: object
