@@ -85,7 +85,7 @@ content:
             label: Slider image
             type: image
             options: { path: art, extensions: [jpg, webp] }
-            description: "Wielkość 1600x1100px, format pliku PNG lub Webp, bez tła"
+            description: "Wielkość 1600x1100px, format pliku JPG lub Webp, bez tła"
 
       # SERVICES (Tradycja)
       - name: services_area
@@ -104,7 +104,7 @@ content:
                 label: Image
                 type: image
                 options: { path: art, extensions: [jpg, webp] }
-                description: "Wielkość 970x786px, format pliku JPG, PNG lub Webp"
+                description: "Wielkość 970x786px, format pliku JPG lub Webp"
               - { name: description, label: Description, type: rich-text }
 
       # PROCESS (Pismo Pielgrzym)
@@ -118,7 +118,7 @@ content:
             label: Image
             type: image
             options: { path: art, extensions: [jpg, webp] }
-            description: "1500x1250px, format pliku PNG lub Webp, bez tła"
+            description: "1500x1250px, format pliku JPG lub Webp, bez tła"
           - name: lists
             label: Bullet list
             type: object
@@ -156,7 +156,7 @@ content:
             label: Poster image
             type: image
             options: { path: art, extensions: [jpg, webp] }
-            description: "970x786px, format pliku JPG, PNG lub Webp"
+            description: "970x786px, format pliku JPG lub Webp"
           - name: lists
             label: Bullet list
             type: object
