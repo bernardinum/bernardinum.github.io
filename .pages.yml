@@ -48,6 +48,7 @@ content:
     type: file
     path: _data/navigation.yml
     format: yaml
+    readOnly: true
     fields:
       - name: main_menu
         label: Odnośnik
