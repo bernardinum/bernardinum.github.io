@@ -3,17 +3,17 @@ title: Bernardinum
 timezone: Europe/Warsaw
 collections:
   authors:
-    title: Authors
+    title: Autorzy
     output: false
   portfolio:
     title: Portfolio
     output: false
     permalink: "/portfolio/:name"
   posts:
-    title: Posts
+    title: Blog
     output: true
   shop_items:
-    title: Shop Items
+    title: Sklep
     output: false
     permalink: "/sklep/:name"
   uploads:
@@ -23,26 +23,33 @@ baseurl:
 url: https://www.bernardinum.com.pl
 permalink: "/:title"
 repository: bernardinum/bernardinum.github.io
+
 plugins:
 - jekyll-feed
 - jekyll-paginate-v2
 - jekyll-archives
 - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /blog/:title/
+
 pagination:
-  news:
-    enabled: true
-    debug: true
-    data: news
-    per_page: 5
-    sort_field: add_date
-    sort_reverse: true
-    permalink: "/blog/page/:num/"
-    title: ":title - page :num"
-    limit: 0
-    tag: 
-    trail:
-      before: 2
-      after: 2
+  enabled: true
+  debug: false
+  collection: posts
+  per_page: 10
+  permalink: /strona/:num/
+  title: ":title - strona :num"
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
 jekyll-archives:
   enabled:
   - tags
@@ -52,7 +59,7 @@ jekyll-archives:
     category: category
   permalinks:
     tag: "/tag/:name/"
-    category: "/category/:name/"
+    category: "/blog/kategoria/:name/"
 feed:
   collections:
     posts:

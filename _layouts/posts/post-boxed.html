@@ -21,7 +21,7 @@ layout: default
                 {% if page.categories %}
                 <div class="category text-center">
                   {% for category in page.categories %}
-                  <a href="/category/{{ category | downcase }}" class="badge rounded-pill {{page.badge_color}}">{{
+                  <a href="/category/{{ category | slugify }}" class="badge rounded-pill {{page.badge_color}}">{{
                     category }}</a>
                   {% endfor %}
                 </div>
@@ -29,7 +29,7 @@ layout: default
                 <h2 class="post-title text-center">{{ page.title }}</h2>
                 <div class="meta text-center">
                   {% if page.date %}
-                  <span class="date"><i class="jam jam-clock"></i>{{page.date | date_to_string}}</span>
+                  <span class="date"><i class="jam jam-clock"></i>{{page.date | date: "%d.%m.%Y" }}</span>
                   {% endif %}
                   {% if page.author %}
                   <span class="author"><i class="jam jam-user"></i><a href="/author/{{page.author | slugify}}">By
@@ -81,18 +81,5 @@ layout: default
 {% include posts/trending-posts.html trending_post_title="Trending Posts" %}
 {% endif %}
 
-<div class="wrapper gray-wrapper">
-  <div class="container inner">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        {% include utilities/disqus-comments.html %}
-      </div>
-      <!-- /column -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
 </div>
-<!-- /.wrapper -->
-</div>
-{% include layouts/footer/footer-1.html %}
+{% include layouts/footer/footer-3.html %}

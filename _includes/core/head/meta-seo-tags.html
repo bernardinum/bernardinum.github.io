@@ -7,3 +7,13 @@
 {% if page.meta_keywords %}
 <meta name="keywords" content="{{ page.meta_keywords }}">
 {% endif %}
+
+{% assign canonical_url = site.url | append: page.url | replace:'index.html','' %}
+
+{% if paginator and paginator.page and paginator.page > 1 %}
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="{{ site.url }}/blog/" />
+{% elsif page.collection == 'posts' %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+{% endif %}
+

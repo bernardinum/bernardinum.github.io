@@ -33,6 +33,12 @@ jobs:
       - name: Run fetch_books.rb
         run: bundle exec ruby _scripts/fetch_books.rb
 
+      - name: Run fetch_bernardinum_news.rb
+        run: bundle exec ruby _scripts/fetch_bernardinum_news.rb
+        
+      - name: Generate _posts from news.json
+        run: bundle exec ruby _scripts/generate_posts_from_news_json.rb
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
