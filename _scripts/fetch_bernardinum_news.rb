@@ -194,7 +194,7 @@ def fetch_last_days(store_url, token, days: 2, limit: 200)
 
   fetched = []
 
-  # 2) lecimy od końca, bo tam są najnowsze (API ma sort rosnący)
+  # 2) od końca, bo tam są najnowsze (API ma sort rosnący)
   page = total_pages
   while page >= 1
     data, _res = fetch_page(store_url, token, page, limit)
