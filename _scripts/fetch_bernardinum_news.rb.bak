@@ -83,15 +83,7 @@ def http_request(uri, req, max_retries: 5)
 end
 
 def parse_time(str)
-  s = str.to_s.strip
-  return nil if s.empty?
-
-  # jeśli brak strefy w stringu, traktuj jako UTC
-  if s =~ /(\+|\-)\d{2}:\d{2}\z/ || s.end_with?('Z')
-    Time.parse(s)
-  else
-    Time.parse(s + ' UTC')
-  end
+  Time.parse(str.to_s)
 rescue
   nil
 end
@@ -183,44 +175,27 @@ def merge_by_id(existing_arr, fetched_arr)
 end
 
 def fetch_last_days(store_url, token, days: 2, limit: 200)
-  cutoff = Time.now.utc - (days * 24 * 60 * 60)
-
-  # 1) pobierz stronę 1 tylko po to, żeby poznać total_pages
-  data1, res1 = fetch_page(store_url, token, 1, limit)
-  total_pages = (res1['x-shop-result-pages'] || data1['pages']).to_i
-  total_pages = 1 if total_pages <= 0
-
-  log_info("API pages=#{total_pages}, cutoff=#{cutoff}")
-
+  cutoff = Time.now - (days * 24 * 60 * 60)
   fetched = []
+  page = 1
 
-  # 2) lecimy od końca, bo tam są najnowsze (API ma sort rosnący)
-  page = total_pages
-  while page >= 1
+  loop do
     data, _res = fetch_page(store_url, token, page, limit)
     list = data['list'] || []
     break if list.empty?
 
+    list.each { |n| fetched << n }
+
     times = list.map { |n| parse_time(n['date']) }.compact
-    newest = times.max
     oldest = times.min
+    log_info("Strona #{page}: rekordów #{list.length}, oldest=#{oldest}")
 
-    log_info("Strona #{page}: rekordów #{list.length}, newest=#{newest}, oldest=#{oldest}")
-
-    # 3) jeśli nawet najnowszy na tej stronie jest starszy niż cutoff,
-    # to wszystkie wcześniejsze strony będą jeszcze starsze -> kończymy
-    break if newest && newest < cutoff
-
-    # dopisz tylko te >= cutoff
-    list.each do |n|
-      t = parse_time(n['date'])
-      fetched << n if t && t >= cutoff
-    end
-
-    page -= 1
+    break if oldest && oldest < cutoff
+    page += 1
+    break if page > 50
   end
 
-  fetched
+  fetched.select { |n| (parse_time(n['date']) || Time.at(0)) >= cutoff }
 end
 
 # --- MAIN ---
