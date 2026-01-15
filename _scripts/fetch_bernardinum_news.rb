@@ -184,7 +184,10 @@ def merge_by_id(existing_arr, fetched_arr)
 end
 
 def fetch_last_days(store_url, token, days: 2, limit: 200)
-  cutoff = Time.now.utc - (days * 24 * 60 * 60)
+  # cutoff liczony "od północy" sprzed N dni (UTC)
+  cutoff =
+    Time.utc(Date.today.year, Date.today.month, Date.today.day) -
+    (days * 24 * 60 * 60)
 
   # 1) pobierz stronę 1 tylko po to, żeby poznać total_pages
   data1, res1 = fetch_page(store_url, token, 1, limit)
@@ -195,24 +198,22 @@ def fetch_last_days(store_url, token, days: 2, limit: 200)
 
   fetched = []
 
-  # 2) od końca, bo tam są najnowsze (API ma sort rosnący)
+  # 2) lecimy od końca (najnowsze wpisy są na końcu)
   page = total_pages
   while page >= 1
     data, _res = fetch_page(store_url, token, page, limit)
     list = data['list'] || []
     break if list.empty?
 
-    times = list.map { |n| parse_time(n['date']) }.compact
+    times  = list.map { |n| parse_time(n['date']) }.compact
     newest = times.max
     oldest = times.min
 
     log_info("Strona #{page}: rekordów #{list.length}, newest=#{newest}, oldest=#{oldest}")
 
-    # 3) jeśli nawet najnowszy na tej stronie jest starszy niż cutoff,
-    # to wszystkie wcześniejsze strony będą jeszcze starsze -> kończymy
+    # jeśli nawet newest < cutoff → dalej będą tylko starsze
     break if newest && newest < cutoff
 
-    # dopisz tylko te >= cutoff
     list.each do |n|
       t = parse_time(n['date'])
       fetched << n if t && t >= cutoff
@@ -233,7 +234,18 @@ log_info("Aktualizacja news.json: pobieram tylko wpisy z ostatnich 2 dni i MERGE
 
 existing = load_existing(DATA_PATH)
 
-raw_recent = fetch_last_days(STORE_URL, API_TOKEN, days: 2, limit: 200)
+days_window = (ENV['BERNARDINUM_NEWS_DAYS'] || '14').to_i
+days_window = 14 if days_window <= 0
+
+log_info("Okno pobierania newsów: #{days_window} dni")
+
+raw_recent = fetch_last_days(
+  STORE_URL,
+  API_TOKEN,
+  days: days_window,
+  limit: 200
+)
+
 mapped_recent = raw_recent.map { |n| map_news_item(STORE_URL, n) }
 
 merged = merge_by_id(existing, mapped_recent)
