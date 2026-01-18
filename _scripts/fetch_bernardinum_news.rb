@@ -43,7 +43,7 @@ def sanitize_object(obj)
   when Hash
     obj.each_with_object({}) { |(k, v), h| h[k] = sanitize_object(v) }
   when Array
-    obj.map { |v| h = sanitize_object(v); h }
+    obj.map { |v| sanitize_object(v) }
   when String
     sanitize_string(obj)
   else
@@ -52,34 +52,53 @@ def sanitize_object(obj)
 end
 
 def write_json_utf8(path, data)
-  json = JSON.pretty_generate(data)
+  json = JSON.pretty_generate(data) + "\n"
   File.open(path, 'wb') { |f| f.write(json.encode('UTF-8')) }
 end
 
-def http_request(uri, req, max_retries: 5)
-  retries = 0
-  begin
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = (uri.scheme == 'https')
-    http.read_timeout = 60
-    http.open_timeout = 20
+def http_request(uri, req, max_retries: 6)
+  attempt = 0
 
-    res = http.request(req)
+  loop do
+    attempt += 1
 
-    if res.code.to_i == 429 || (500..599).include?(res.code.to_i)
-      raise "HTTP #{res.code}"
+    begin
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = (uri.scheme == 'https')
+      http.read_timeout = 60
+      http.open_timeout = 20
+
+      res = http.request(req)
+
+      code = res.code.to_i
+
+      # 429: respect Retry-After if present
+      if code == 429 && attempt < max_retries
+        wait_s = (res['Retry-After'] || '3').to_i
+        wait_s = 3 if wait_s <= 0
+        log_warn("RATE LIMIT 429: czekam #{wait_s}s (attempt #{attempt}/#{max_retries})")
+        sleep(wait_s)
+        next
+      end
+
+      # 5xx: retry with exponential backoff
+      if (500..599).include?(code) && attempt < max_retries
+        sleep_s = [2**attempt, 30].min
+        log_warn("HTTP #{code}: retry (sleep #{sleep_s}s) (attempt #{attempt}/#{max_retries})")
+        sleep(sleep_s)
+        next
+      end
+
+      return res
+    rescue StandardError => e
+      if attempt < max_retries
+        sleep_s = [2**attempt, 30].min
+        log_warn("Retry po wyjątku: #{e.class}: #{e.message} (sleep #{sleep_s}s) (attempt #{attempt}/#{max_retries})")
+        sleep(sleep_s)
+        next
+      end
+      raise
     end
-
-    res
-  rescue => e
-    retries += 1
-    if retries <= max_retries
-      sleep_s = [2**retries, 30].min
-      log_warn("Retry ##{retries} po błędzie: #{e.class}: #{e.message} (sleep #{sleep_s}s)")
-      sleep sleep_s
-      retry
-    end
-    raise
   end
 end
 
@@ -93,7 +112,7 @@ def parse_time(str)
   else
     Time.parse(s + ' UTC')
   end
-rescue
+rescue StandardError
   nil
 end
 
@@ -126,10 +145,12 @@ def map_news_item(store_url, n)
 
   img = nil
   img = n['image_url'] if n.key?('image_url')
-  img = n['image'] if img.nil? && n.key?('image')
+  img = n['image'] if (img.nil? || img.to_s.strip.empty?) && n.key?('image')
+
   if img.nil? || img.to_s.strip.empty?
     img = extract_first_img_src(content) || extract_first_img_src(short_content)
   end
+
   img_abs = absolutize_url(store_url, img)
 
   {
@@ -170,17 +191,52 @@ end
 def load_existing(path)
   return [] unless File.exist?(path)
   sanitize_object(JSON.parse(File.read(path, mode: 'rb')))
-rescue => e
+rescue StandardError => e
   log_warn("Nie udało się wczytać news.json (#{e.class}: #{e.message}). Start od zera.")
   []
 end
 
+def present?(v)
+  !v.nil? && v.to_s.strip != ''
+end
+
+# MĄDRY MERGE: nie nadpisuj istniejących pól pustymi wartościami z fetch
 def merge_by_id(existing_arr, fetched_arr)
   by_id = {}
-  existing_arr.each { |r| by_id[r['id'].to_i] = r }
-  fetched_arr.each  { |r| by_id[r['id'].to_i] = r }
-  merged = by_id.values
-  merged.sort_by { |x| x['id'].to_i }
+
+  (existing_arr || []).each do |r|
+    by_id[r['id'].to_i] = r
+  end
+
+  touched_ids = {}
+
+  (fetched_arr || []).each do |r|
+    id = r['id'].to_i
+    next if id <= 0
+
+    if by_id.key?(id)
+      old = by_id[id]
+      merged = old.dup
+
+      r.each do |k, v|
+        # nie nadpisuj pustymi
+        if v.is_a?(String)
+          merged[k] = v if present?(v)
+        else
+          merged[k] = v unless v.nil?
+        end
+      end
+
+      by_id[id] = merged
+    else
+      by_id[id] = r
+    end
+
+    touched_ids[id] = true
+  end
+
+  merged = by_id.values.sort_by { |x| x['id'].to_i }
+  [merged, touched_ids.length]
 end
 
 def fetch_last_days(store_url, token, days: 2, limit: 200)
@@ -189,17 +245,15 @@ def fetch_last_days(store_url, token, days: 2, limit: 200)
     Time.utc(Date.today.year, Date.today.month, Date.today.day) -
     (days * 24 * 60 * 60)
 
-  # 1) pobierz stronę 1 tylko po to, żeby poznać total_pages
   data1, res1 = fetch_page(store_url, token, 1, limit)
   total_pages = (res1['x-shop-result-pages'] || data1['pages']).to_i
   total_pages = 1 if total_pages <= 0
 
-  log_info("API pages=#{total_pages}, cutoff=#{cutoff}")
+  log_info("API pages=#{total_pages}, cutoff=#{cutoff} (days=#{days})")
 
   fetched = []
-
-  # 2) lecimy od końca (najnowsze wpisy są na końcu)
   page = total_pages
+
   while page >= 1
     data, _res = fetch_page(store_url, token, page, limit)
     list = data['list'] || []
@@ -211,7 +265,6 @@ def fetch_last_days(store_url, token, days: 2, limit: 200)
 
     log_info("Strona #{page}: rekordów #{list.length}, newest=#{newest}, oldest=#{oldest}")
 
-    # jeśli nawet newest < cutoff → dalej będą tylko starsze
     break if newest && newest < cutoff
 
     list.each do |n|
@@ -230,14 +283,12 @@ if STORE_URL.empty? || API_TOKEN.empty?
   abort "Brak ENV: BERNARDINUM_STORE_URL lub BERNARDINUM_API_TOKEN"
 end
 
-log_info("Aktualizacja news.json: pobieram tylko wpisy z ostatnich 2 dni i MERGE...")
-
-existing = load_existing(DATA_PATH)
-
 days_window = (ENV['BERNARDINUM_NEWS_DAYS'] || '14').to_i
 days_window = 14 if days_window <= 0
 
-log_info("Okno pobierania newsów: #{days_window} dni")
+log_info("Aktualizacja news.json: pobieram wpisy z ostatnich #{days_window} dni i MERGE...")
+
+existing = load_existing(DATA_PATH)
 
 raw_recent = fetch_last_days(
   STORE_URL,
@@ -248,9 +299,9 @@ raw_recent = fetch_last_days(
 
 mapped_recent = raw_recent.map { |n| map_news_item(STORE_URL, n) }
 
-merged = merge_by_id(existing, mapped_recent)
+merged, touched = merge_by_id(existing, mapped_recent)
 
 FileUtils.mkdir_p(File.dirname(DATA_PATH))
 write_json_utf8(DATA_PATH, merged)
 
-log_info("Zapisano #{merged.length} rekordów w #{DATA_PATH} (dociągnięto/odświeżono: #{mapped_recent.length})")
+log_info("Zapisano #{merged.length} rekordów w #{DATA_PATH} (dociągnięto/odświeżono ID: #{touched})")

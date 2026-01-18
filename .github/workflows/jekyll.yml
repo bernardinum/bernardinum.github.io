@@ -34,20 +34,19 @@ jobs:
         run: bundle exec ruby _scripts/fetch_books.rb
 
       - name: Run fetch_bernardinum_news.rb
+        run: bundle exec ruby _scripts/fetch_bernardinum_news.rb
         env:
           BERNARDINUM_STORE_URL: ${{ vars.BERNARDINUM_STORE_URL }}
           BERNARDINUM_API_TOKEN: ${{ secrets.BERNARDINUM_API_TOKEN }}
-        run: bundle exec ruby _scripts/fetch_bernardinum_news.rb
+          BERNARDINUM_NEWS_DAYS: ${{ vars.BERNARDINUM_NEWS_DAYS }}
         
       - name: Generate _posts from news.json
-        env:
-          BERNARDINUM_NEWS_DAYS: ${{ vars.BERNARDINUM_NEWS_DAYS }}
         run: bundle exec ruby _scripts/generate_posts_from_news_json.rb
 
       - name: Commit generated content
+        run: bundle exec ruby _scripts/commit_generated.rb
         env:
           BERNARDINUM_AUTO_COMMIT: ${{ vars.BERNARDINUM_AUTO_COMMIT }}
-        run: bundle exec ruby _scripts/commit_generated.rb
 
       - name: Setup Pages
         id: pages
