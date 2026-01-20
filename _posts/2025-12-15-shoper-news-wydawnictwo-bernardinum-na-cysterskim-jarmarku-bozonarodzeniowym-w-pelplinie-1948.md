@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Wydawnictwo „Bernardinum” na Cysterskim Jarmarku Bożonarodzeniowym w Pelplinie"
-date: 2025-12-15 00:00:00 +0100
+date: 2025-12-15 00:00:00 +0000
 shoper_id: 1948
 slug: wydawnictwo-bernardinum-na-cysterskim-jarmarku-bozonarodzeniowym-w-pelplinie-1948
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2025/AXH16663%20%E2%80%94%20net.jpg"

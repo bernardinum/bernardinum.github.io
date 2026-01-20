@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Książki pod choinką – gwarantujemy terminową dostawę!"
-date: 2025-12-02 00:00:00 +0100
+date: 2025-12-02 00:00:00 +0000
 shoper_id: 1941
 slug: ksiazki-pod-choinka-gwarantujemy-terminowa-dostawe-1941
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2025/AI%20BN2.jpg"

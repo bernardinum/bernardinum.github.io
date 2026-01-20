@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Dlaczego warto czytać książki?"
-date: 2025-11-14 00:00:00 +0100
+date: 2025-11-14 00:00:00 +0000
 shoper_id: 1933
 slug: dlaczego-warto-czytac-ksiazki-1933
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2024/ksi%C4%85%C5%BCki%20edukacja%201.jpg"

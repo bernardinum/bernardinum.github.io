@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Książka pachnąca Świętami. Poznaj historię toruńskich pierników"
-date: 2025-12-05 00:00:00 +0100
+date: 2025-12-05 00:00:00 +0000
 shoper_id: 1943
 slug: ksiazka-pachnaca-swietami-poznaj-historie-torunskich-piernikow-1943
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1943.jpg"

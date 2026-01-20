@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Poznaj nasze promocje"
-date: 2026-01-13 00:00:00 +0100
+date: 2026-01-13 00:00:00 +0000
 shoper_id: 1957
 slug: poznaj-nasze-promocje-1957
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2026/produkty%20tygodnia%20%E2%80%93%20reklama%2041.jpg"

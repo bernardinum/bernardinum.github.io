@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Książki pod choinką – ostatnia szansa na dostawę przed Świętami"
-date: 2025-12-17 00:00:00 +0100
+date: 2025-12-17 00:00:00 +0000
 shoper_id: 1950
 slug: ksiazki-pod-choinka-ostatnia-szansa-na-dostawe-przed-swietami-1950
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2025/AI%20BN2.jpg"

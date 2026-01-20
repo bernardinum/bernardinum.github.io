@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Kulinarna wyprawa do Libii. Nadia Hamid powraca z nową książką"
-date: 2026-01-16 00:00:00 +0100
+date: 2026-01-16 00:00:00 +0000
 shoper_id: 1958
 slug: kulinarna-wyprawa-do-libii-nadia-hamid-powraca-z-nowa-ksiazka-1958
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2026/Kuchnia%20libijska%201%20%E2%80%94%20net.jpg"
@@ -16,7 +16,5 @@ categories: [Aktualności]
 <p>Dla tych, którzy wierzą, że smak jest mostem między kulturami.</p>
 <p>Premiera książki zaplanowana jest na 1 lutego 2026 r. Do tego czasu macie okazję zakupić ją w przedsprzedaży w niższej cenie: 30 zł zamiast 39,90 zł.</p>
 <p><a href="https://ksiegarnia.bernardinum.com.pl/pl/p/Berberyjska-kuchnia-Libii.-Pomiedzy-zapachem-morza-i-zarem-pustyni/2460" target="_blank">Więcej o książce "Berberyjska kuchnia Libii. Pomiędzy zapachem morza i żarem pustyni" oraz możliwość zakupu w przedsprzedaży</a></p>
-<p> </p>
-<p></p>
+<p><a href="https://ksiegarnia.bernardinum.com.pl/pl/p/Berberyjska-kuchnia-Libii.-Pomiedzy-zapachem-morza-i-zarem-pustyni/2460"> </a></p>
 <p><img src="/userdata/public/assets/aktualnosci/2026/patronat%20medialny_100.jpg" alt="" width="396" height="155" /></p>
-<p> </p>

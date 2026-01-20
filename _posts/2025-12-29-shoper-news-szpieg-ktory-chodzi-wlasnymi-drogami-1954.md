@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Szpieg, który chodzi własnymi drogami"
-date: 2025-12-29 00:00:00 +0100
+date: 2025-12-29 00:00:00 +0000
 shoper_id: 1954
 slug: szpieg-ktory-chodzi-wlasnymi-drogami-1954
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1954.jpg"

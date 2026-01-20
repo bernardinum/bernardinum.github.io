@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Dwie gorące okazje – złap je, zanim znikną!"
-date: 2025-11-20 00:00:00 +0100
+date: 2025-11-20 00:00:00 +0000
 shoper_id: 1936
 slug: dwie-gorace-okazje-zlap-je-zanim-znikna-1936
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1936.jpg"

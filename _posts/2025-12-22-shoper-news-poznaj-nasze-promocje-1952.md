@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Poznaj nasze promocje"
-date: 2025-12-22 00:00:00 +0100
+date: 2025-12-22 00:00:00 +0000
 shoper_id: 1952
 slug: poznaj-nasze-promocje-1952
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1952.jpg"

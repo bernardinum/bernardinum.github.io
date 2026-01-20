@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Uwaga! Do zdobycia książki Wydawnictwa „Bernardinum”"
-date: 2025-11-12 00:00:00 +0100
+date: 2025-11-12 00:00:00 +0000
 shoper_id: 1931
 slug: uwaga-do-zdobycia-ksiazki-wydawnictwa-bernardinum-1931
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2025/MA-5_43_2025-krzyzowka.jpg"

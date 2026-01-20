@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Obraz prawdziwej Malty na przestrzeni wieków"
-date: 2025-12-04 00:00:00 +0100
+date: 2025-12-04 00:00:00 +0000
 shoper_id: 1942
 slug: obraz-prawdziwej-malty-na-przestrzeni-wiekow-1942
 post_image: "https://ksiegarnia.bernardinum.com.pl/userdata/public/assets/aktualnosci/sztukater.jpg"

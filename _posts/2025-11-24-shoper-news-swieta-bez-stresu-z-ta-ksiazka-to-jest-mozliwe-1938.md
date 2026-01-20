@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Święta bez stresu? Z tą książką to jest możliwe!"
-date: 2025-11-24 00:00:00 +0100
+date: 2025-11-24 00:00:00 +0000
 shoper_id: 1938
 slug: swieta-bez-stresu-z-ta-ksiazka-to-jest-mozliwe-1938
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1938.jpg"

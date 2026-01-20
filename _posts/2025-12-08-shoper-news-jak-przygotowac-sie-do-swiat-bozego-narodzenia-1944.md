@@ -1,7 +1,7 @@
 ---
 layout: posts/post-boxed
 title: "Jak przygotować się do świąt Bożego Narodzenia"
-date: 2025-12-08 00:00:00 +0100
+date: 2025-12-08 00:00:00 +0000
 shoper_id: 1944
 slug: jak-przygotowac-sie-do-swiat-bozego-narodzenia-1944
 post_image: "https://sklep5435072.homesklep.pl/userdata/public/assets//1944.jpg"
