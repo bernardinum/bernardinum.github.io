@@ -15,6 +15,10 @@ def log_info(msg)
   puts "INFO: #{msg}"
 end
 
+def log_warn(msg)
+  warn "WARN: #{msg}"
+end
+
 def sanitize_string(val)
   return val unless val.is_a?(String)
   s = val.dup
@@ -42,9 +46,17 @@ def slugify(str)
 end
 
 def parse_time(str)
-  Time.parse(str.to_s)
+  s = str.to_s.strip
+  return Time.now.utc if s.empty?
+
+  # jeśli brak strefy, traktuj jako UTC (bezpieczne dla GH runner)
+  if s =~ /(\+|\-)\d{2}:\d{2}\z/ || s.end_with?('Z')
+    Time.parse(s)
+  else
+    Time.parse(s + ' UTC')
+  end
 rescue
-  Time.now
+  Time.now.utc
 end
 
 def remove_first_img(html)
@@ -68,7 +80,8 @@ end
 def build_front_matter(title, date, shoper_id, image_url)
   fm = []
   fm << "---"
-  fm << "layout: posts/\post-boxed"
+  # FIX: poprawny layout bez backslasha
+  fm << "layout: posts/post-boxed"
   fm << "title: #{title.to_s.inspect}"
   fm << "date: #{date.strftime('%Y-%m-%d %H:%M:%S %z')}"
   fm << "shoper_id: #{shoper_id}"
@@ -82,6 +95,7 @@ def build_front_matter(title, date, shoper_id, image_url)
 end
 
 def load_news(path)
+  raise "Brak pliku: #{path}" unless File.exist?(path)
   JSON.parse(File.read(path, mode: 'rb'))
 end
 
