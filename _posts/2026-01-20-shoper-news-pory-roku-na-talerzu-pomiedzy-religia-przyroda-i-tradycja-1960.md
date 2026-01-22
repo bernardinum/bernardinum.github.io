@@ -12,3 +12,5 @@ categories: [Aktualności]
 <p><img src="/userdata/public/assets/aktualnosci/2026/FB%203.png" alt="" width="740" height="531" /></p>
 <p><a href="https://ksiegarnia.bernardinum.com.pl/pl/p/Pory-roku-na-talerzu-/1784" target="_blank">Więcej o książce "Pory roku na talerzu" i możliwość zakupu</a></p>
 <p><a href="https://ksiegarnia.bernardinum.com.pl/pl/promotions" target="_blank">Zapraszamy do naszej księgarni internetowej</a></p>
+<p> </p>
+<p><a href="https://ksiegarnia.bernardinum.com.pl/pl/p/Pory-roku-na-talerzu-/1784"> <img src="/userdata/public/assets/aktualnosci/2026/FB%203%20bez%20tla.png" alt="" width="628" height="523" /> </a></p>
