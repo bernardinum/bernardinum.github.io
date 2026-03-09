@@ -17,7 +17,7 @@
                                         <p>{{page.contact_info.sub_title}}</p>
                                         <ul class="icon-list">
                                             {% for lists in page.contact_form.lists %}
-                                            {% if lists.title == "Phone" %}
+                                            {% if lists.title == "Telefon" %}
                                             <li><i class="{{lists.icon}}"></i> <a href="tel:{{lists.info_01}}">{{lists.info_01}}</a></li>
                                             {% elsif lists.title == "E-mail" %}
                                             <li><i class="{{lists.icon}}"></i> <a href="mailto:{{lists.info_01}}">{{lists.info_01}}</a></li>
@@ -36,7 +36,7 @@
                                                 <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="true" aria-controls="accordion-collapse-1-1">Departamenty - Telefony</button>
                                                   
                                                 </div>
-                                                <div id="accordion-collapse-1-1" class="accordion-collapse collapse" aria-labelledby="accordion-heading-1-1" data-bs-parent="#accordion-1">
+                                                <div id="accordion-collapse-1-1" class="accordion-collapse collapse show" aria-labelledby="accordion-heading-1-1" data-bs-parent="#accordion-1">
                                                   <div class="accordion-body card-body">
                                                     <ul class="icon-list">
                                                         {% for lists in page.contact_form.list_extra_phone %}
@@ -55,13 +55,51 @@
                                                 <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2-1" aria-expanded="true" aria-controls="accordion-collapse-2-1">Departamenty - E-maile</button>
                                                   
                                                 </div>
-                                                <div id="accordion-collapse-2-1" class="accordion-collapse collapse" aria-labelledby="accordion-heading-2-1" data-bs-parent="#accordion-2">
+                                                <div id="accordion-collapse-2-1" class="accordion-collapse collapse show" aria-labelledby="accordion-heading-2-1" data-bs-parent="#accordion-2">
                                                   <div class="accordion-body card-body">
                                                     <ul class="icon-list">
                                                         {% for lists in page.contact_form.list_extra_email %}
                                                         <li>{{lists.title}}: <a href="mailto:{{lists.info_01}}">{{lists.info_01}}</a></li>
                                                         {% endfor %}
                                                     </ul>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div id="accordion-3" class="accordion accordion-wrapper simple">
+                                            <div class="accordion-item card">
+                                                <div class="accordion-header card-header" id="accordion-heading-3-1">
+                          
+                                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-1" aria-expanded="true" aria-controls="accordion-collapse-3-1">Nasze Serwisy Internetowe</button>
+                                                  
+                                                </div>
+                                                <div id="accordion-collapse-3-1" class="accordion-collapse collapse show" aria-labelledby="accordion-heading-3-1" data-bs-parent="#accordion-3">
+                                                  <div class="accordion-body card-body">
+                                                    <ul class="icon-list">
+                                                        {% for lists in page.contact_form.list_extra_www %}
+                                                        <li>{{lists.title}}: <a target="_blank" href="{{lists.info_01}}">{{lists.info_01}}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div id="accordion-4" class="accordion accordion-wrapper simple">
+                                            <div class="accordion-item card">
+                                                <div class="accordion-header card-header" id="accordion-heading-4-1">
+                          
+                                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-4-1" aria-expanded="true" aria-controls="accordion-collapse-4-1">Media społecznościowe</button>
+                                                  
+                                                </div>
+                                                <div id="accordion-collapse-4-1" class="accordion-collapse collapse show" aria-labelledby="accordion-heading-4-1" data-bs-parent="#accordion-4">
+                                                  <div class="accordion-body card-body">
+                                                    <ul class="social social-mute social-s ms-auto">
+                                                        {% for social_info in site.data.general_settings.social_accounts.links %}
+                                                        <li><a target="_blank" href="{{social_info.url}}"><i class="{{social_info.icon}}"></i></a></li>
+                                                        {% endfor %}
+                                                      </ul>
                                                   </div>
                                                 </div>
                                               </div>
@@ -95,8 +133,8 @@
                 {% endif %}
                 <div class="space40"></div>
                 
-                        <form id="contact-form" class="fields-white" method="post"
-                            action="https://formsubmit.io/send/{{page.contact_form.action_email}}">
+                        <form id="contact-form" data-formtrack data-botpoison-public-key="pk_26900fb3-fe1d-48d7-b067-fcf2a17fac7c" class="fields-white" method="post"
+                            action="https://submit-form.com/{{page.contact_form.form_id}}">
                             <div class="messages"></div>
                             <div class="controls">
                                 <div class="row g-3">
@@ -123,7 +161,13 @@
                                     </div>
                                     {% endif %}
                                     {% endfor %}
-                                    <input name="_formsubmit_id" type="text" style="display:none">
+                                    <input type="hidden" name="_email.subject" value="Masz nowe zgłoszenie z formularza kontaktowego!" />
+                                    <input type="hidden" name="_redirect" value={{ "/formularz-zostal-wyslany" | absolute_url }}/>
+                                    <input type="hidden" name="_append" value="false" />
+                                    <input type="hidden" name="_email.from" value="Wydawnictwo Bernardinum" />
+                                    <input type="hidden" name="_email.template.title" value="Złoszenie z formularza kontaktowego" />
+                                    <input type="hidden" name="_email.template.footer" value="false" />
+                                    <input type="hidden" name="_feedback.whitelabel" value="true" />
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12">
