@@ -133,7 +133,7 @@
                 {% endif %}
                 <div class="space40"></div>
                 
-                        <form id="contact-form" data-formtrack data-botpoison-public-key="pk_26900fb3-fe1d-48d7-b067-fcf2a17fac7c" class="fields-white" method="post"
+                        <form id="contact-forms" data-formtrack data-botpoison-public-key="pk_26900fb3-fe1d-48d7-b067-fcf2a17fac7c" class="fields-white" method="post"
                             action="https://submit-form.com/{{page.contact_form.form_id}}">
                             <div class="messages"></div>
                             <div class="controls">
@@ -144,24 +144,20 @@
                                         <div class="form-group">
                                             <input id="{{forms_data.field_name}}" type="text"
                                                 name="{{forms_data.field_name}}" class="form-control"
-                                                placeholder="{{forms_data.placeholder}}  *" required="required"
-                                                data-error="{{forms_data.error_message}}">
-                                            <div class="help-block with-errors"></div>
+                                                placeholder="{{forms_data.placeholder}}  *" required />
+                                            <div class="invalid-feedback">Musisz wypełnić to pole.</div>
                                         </div>
                                     </div>
-                                    {% else if forms_data.field_type == "textarea" %}
+                                    {% elsif forms_data.field_type == "textarea" %}
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea id="{{forms_data.field_name}}" name="{{forms_data.field_name}}"
-                                                class="form-control" placeholder="{{forms_data.placeholder}} *" rows="4"
-                                                required="required"
-                                                data-error="{{forms_data.error_message}}"></textarea>
-                                            <div class="help-block with-errors"></div>
+                                            <textarea id="{{forms_data.field_name}}" name="{{forms_data.field_name}}" class="form-control" placeholder="{{forms_data.placeholder}} *" rows="4" required></textarea>
+                                            <div class="invalid-feedback">Musisz wypełnić to pole.</div>
                                         </div>
                                     </div>
                                     {% endif %}
                                     {% endfor %}
-                                    <input type="hidden" name="_email.subject" value="Masz nowe zgłoszenie z formularza kontaktowego!" />
+                                    <input type="hidden" name="_email.subject" value="Masz nowe zgłoszenie z formularza kontaktowego www.bernardinum.com.pl" />
                                     <input type="hidden" name="_redirect" value={{ "/formularz-zostal-wyslany" | absolute_url }}/>
                                     <input type="hidden" name="_append" value="false" />
                                     <input type="hidden" name="_email.from" value="Wydawnictwo Bernardinum" />
