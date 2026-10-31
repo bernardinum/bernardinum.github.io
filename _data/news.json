@@ -20492,11 +20492,11 @@
   {
     "id": 2063,
     "title": "Uwaga! Do zdobycia książki Wydawnictwa „Bernardinum”",
-    "short_content": "",
-    "content": "",
+    "short_content": "<p>Trzy osoby otrzymają książki ufundowane przez Wydawnictwo „Bernardinum”. To nagrody w konkursie ogłoszonym na łamach magazynu „ZDROWY BIAŁYSTOK”.</p>",
+    "content": "<p><img src=\"/userdata/public/assets/aktualnosci/2026/ZB%201.jpg\" alt=\"\" width=\"800\" height=\"600\" /></p>\r\n<p> </p>\r\n<p><a href=\"https://ksiegarnia.bernardinum.com.pl/pl/p/Onkostory/2495\" target=\"_blank\">Więcej o książce i możliwość zakupu</a></p>\r\n<p><a href=\"https://ksiegarnia.bernardinum.com.pl/\" target=\"_blank\">Zapraszamy do naszej księgarni internetowej</a></p>\r\n<p> </p>",
     "date": "2026-10-30 00:00:00",
     "link": null,
-    "image_url": null,
-    "active": "0"
+    "image_url": "https://sklep5435072.homesklep.pl/userdata/public/assets/aktualnosci/2026/ZB%201.jpg",
+    "active": "1"
   }
 ]
